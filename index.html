@@ -23,18 +23,24 @@
                 name: 'Mateusz',
                 age: 24,
             }
-            handleClick = e => {
+            handleChange = e => {
                 this.setState({
-                    name: 'Matzh'
+                    name: e.target.value
+                        // onChange event
                 })
-                console.log(e.target)
+            }
+            handleSubmit = e => {
+                e.preventDefault();
+                    // It doesn't reload the website
             }
             render() {
                 return (
                     <div className="app-content">
-                        <h1>Hello World</h1>
-                        <p>My name is { this.state.name } and I'm { this.state.age }.</p>
-                        <button onClick={ this.handleClick }>Get anonymous</button>
+                        <h1>My name is { this.state.name }</h1>
+                        <form onSubmit={ this.handleSubmit }>
+                            <input type="text" onChange= { this.handleChange }/>
+                            <button>Submit</button>
+                        </form>
                     </div>
                 )
             }
@@ -45,9 +51,7 @@
         // JSX - writing HTML code inside JavaScript
         // Return only one root element 
         // div className="" because 'class' is reserved keyword in JS.
-        // <p> needs {} brackets to put dynamic JS code.
-        // Arrow function has a special behavior when it comes to 'this' keyword. It bind the value of 'this'
-            // to whatever this is outside the function.
+        // <h1> needs {} brackets to put dynamic JS code.
 
         ReactDOM.render(<App />, document.getElementById('app'));
         // <App /> == class App
