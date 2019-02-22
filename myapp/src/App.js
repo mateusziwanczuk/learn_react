@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
-import Newcomp from './Newcomp';
+import Persons from './Persons';
 
 class App extends Component {
+  state = {
+    persons : [
+      { name: 'Mateusz', age: 24, id: 1 },
+      { name: 'Borys', age: 27, id: 2 },
+      { name: 'Sebastian', age: 30, id: 3 },
+    ]
+  }
   render() {
     return (
       <div className="App">
         <h1>My first React app</h1>
-        <p>Welcome :)</p>
-        <Newcomp name="Mateusz" age="24"/>
-        <Newcomp name="AlterEgo" age="23"/>
-          {/* ^ Because of props you can use <Newcomp /> several times
-                <div className="NewComp">
-                  <div>Name: { name } </div> 
-                  <div>Age: { age } </div>
-                </div> */}
+        <Persons persons={ this.state.persons }/>
       </div>
     );
   }
