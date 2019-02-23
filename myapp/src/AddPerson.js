@@ -12,7 +12,7 @@ class AddPerson extends Component {
     }
     handleSubmit = e => {
         e.preventDefault();
-        console.log(this.state)
+        this.props.addPerson(this.state);
     }
     render(){
         return (
@@ -22,9 +22,7 @@ class AddPerson extends Component {
                     <input type="text" id="name" onChange={ this.handleChange } />
                     <label htmlFor="name">Age:</label>
                     <input type="text" id="age" onChange={ this.handleChange } />
-                        {/* htmlFor -> JSX */}
                     <button>Submit</button>
-                        {/* console.log(this.state) */}
                 </form>
             </div>
         )
