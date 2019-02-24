@@ -1,56 +1,19 @@
 import React from 'react'
-import Lily from './Lily'
+import World from './World'
 
-// ### Ćwiczenie 6 
-// Stwórz w komponencie `<App />` komponent `<Garden />`. `<Garden />` powinien przyjmować następujące propsy:
-//   -  rose
-//   -  lily
-//   -  gardenia
-//   -  sunflower
-//   -  isWinter
+// ### Ćwiczenie 8
+// W komponencie App stwórz funkcję która wyświetli alert z Hello World. Następnie w App  stwórz komponent 
+// World, który przyjmie deklarację tej funkcji jako props. W World stwórz komponent Hello, który również 
+// przyjmie deklaracje tej funkcji jako prop i który renderuje button po kliknięciu w button powinniśmy zobaczyć 
+// alert z tekstem Hello world.
 
-// Wszystkie propsy **oprócz** `isWinter` powinny być obiektem:
-// ```
-// {
-//    name: nazwa_kwiata // string
-//    height: wysokosc // number
-// }
-// ```
-
-// `isWinter` powinien być booleanem
-
-// Dla każdego kwiatowego propsa stwórz komponent. Każdy z tych komponentów powinien przyjmować propsa `flower`, który wyświetli nazwę kwiata i jego wysokość podaną w centymetrach
-
-// `<Garden />` powinien wyświetlać kwiaty tylko w momencie kiedy `isWinter` jest `false`
-
-// ***Zastanów się jakby można zrefaktoryzować kod***
-
-const Garden = (props) => {
-  return props.flowers.map(flower => <Lily name={flower.name} height={flower.height} />)
+const showAlert = () => {
+  alert('Hello World')
 }
-
-const flowers = [
-  {
-    name: 'rose',
-    height: 35
-  },
-  {
-    name: 'lily',
-    height: 35
-  },
-  {
-    name: 'gardenia',
-    height: 35
-  },
-  {
-    name: 'sunflower',
-    height: 35
-  }
-]
 
 const App = () => {
   return (
-    <Garden flowers={flowers} isWinter={false} />
+    <World showAlertApp={showAlert} />
   )
 }
 

@@ -3,7 +3,7 @@ import Hello from './Hello';
 
 const World = props => {
     return (
-        <Hello showAlertWorld = {props.showAlertWorld}/>
+        <Hello showAlertWorld = {props.showAlertApp}/>
     )
 }
 
