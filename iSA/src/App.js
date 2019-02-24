@@ -1,17 +1,16 @@
 import React from 'react';
 import Name from './Name';
+import User from './User';
 
-// ### Ćwiczenie 2
-// Stwórz komponent `<Name />`, który będzie odpowiedzialny za wyświetlanie dowolnego imienia. Następnie stwórz komponent `<App />` w którym umieścisz wygenerowany komponent `<Name />`
-
-// Spróbuj przenieść `<Name />` do innego pliku i zaimportować dany plik do `<App />`
-
+// ### Ćwiczenie 3 
+// Stwórz komponent `<User />` który przyjmie props `name`. Następnie wyrenderuj otrzymaną w propsie wartość
 
 const App = () => {
   return (
     <div>
       <h1>Hello World</h1>
       <Name />
+      <User name="Jan" />
     </div>
   )
 }
