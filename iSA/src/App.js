@@ -2,8 +2,8 @@ import React from 'react';
 import Name from './Name';
 import User from './User';
 
-// ### Ćwiczenie 3 
-// Stwórz komponent `<User />` który przyjmie props `name`. Następnie wyrenderuj otrzymaną w propsie wartość
+// ### Ćwiczenie 4 
+// Stwórz w komponencie App komponent User. User powinien przyjmować propsa name i przekazywać go dalej do komponentu Welcome, który powinien wyświetlić tekst Hello + name.
 
 const App = () => {
   return (
