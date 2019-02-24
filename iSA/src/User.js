@@ -1,10 +1,17 @@
 import React from 'react'
-import Welcome from './Welcome'
 
 const User = props => {
     return (
-      <Welcome name={ props.name }/>
+      <div>
+        {!!props.age && <Age age={props.age}/>}
+      </div>
     )
   }
+
+const Age = props => {
+  return (
+    <h3>{props.age}</h3>
+  )
+}
 
 export default User

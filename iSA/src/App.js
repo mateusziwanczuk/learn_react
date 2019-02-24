@@ -1,16 +1,13 @@
 import React from 'react';
-import Name from './Name';
 import User from './User';
 
-// ### Ćwiczenie 4 
-// Stwórz w komponencie App komponent User. User powinien przyjmować propsa name i przekazywać go dalej do komponentu Welcome, który powinien wyświetlić tekst Hello + name.
+// ### Ćwiczenie 5 
+// Stwórz w komponencie App komponent User. User powinien przyjmować propsy name, age, occupation. Stwórz komponent dla każdego z nich i wyświetl go tylko w momencie kiedy dany prop jest obecny.
 
-const App = () => {
+const App = (props) => {
   return (
     <div>
-      <h1>Hello World</h1>
-      <Name />
-      <User name="Jan" />
+      <User name="Mateusz" age={24} occupation="student" />
     </div>
   )
 }
