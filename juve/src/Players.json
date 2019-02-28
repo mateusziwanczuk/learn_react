@@ -1,0 +1,53 @@
+[
+    {
+        "id": 1,
+        "username": "Szczesny",
+        "points": 35
+    },
+    {
+        "id": 2,
+        "username": "Chiellini",
+        "points": 341
+    },
+    {
+        "id": 3,
+        "username": "Bonucci",
+        "points": 237
+    },
+    {
+        "id": 4,
+        "username": "Sandro",
+        "points": 93
+    },
+    {
+        "id": 5,
+        "username": "Cancelo",
+        "points": 14
+    },
+    {
+        "id": 6,
+        "username": "Pjanic",
+        "points": 82
+    },
+    {
+        "id": 7,
+        "username": "Matuidi",
+        "points": 53
+    },
+    {
+        "id": 8,
+        "username": "Dybala",
+        "points": 120
+    },
+    {
+        "id": 9,
+        "username": "Costa",
+        "points": 48
+    },
+    {
+        "id": 10,
+        "username": "Mandzukic",
+        "points": 113
+    }
+]
+
