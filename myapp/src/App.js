@@ -17,11 +17,19 @@ class App extends Component {
       persons: persons
     })
   }
+  deletePerson = id => {
+    let persons = this.state.persons.filter(person => {
+      return person.id !== id; // filter out person with this id
+    })
+    this.setState({
+      persons: persons
+    })
+  }
   render() {
     return (
       <div className="App">
         <h1>My first React app</h1>
-        <Persons persons={ this.state.persons }/>
+        <Persons deletePerson={ this.deletePerson } persons={ this.state.persons }/>
         <AddPerson addPerson={ this.addPerson }/>
       </div>
     );
