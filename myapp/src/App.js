@@ -35,9 +35,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>My first React app</h1>
-        <Persons deletePerson={ this.deletePerson } persons={ this.state.persons }/>
+        <h1>Persons list</h1>
         <AddPerson addPerson={ this.addPerson }/>
+        <br/>
+        <Persons deletePerson={ this.deletePerson } persons={ this.state.persons }/>
       </div>
     );
   }
