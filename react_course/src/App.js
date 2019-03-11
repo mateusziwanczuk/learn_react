@@ -10,15 +10,17 @@ class App extends Component {
       { name: 'Jan', age: 26 },
     ]
   }
-  switchNameHandler = () => {
+  changeName = event => {
     this.setState({
       persons: [
         { name: 'Mati', age: 14 },
         { name: 'Martynka', age: 12 },
-        { name: 'Janek', age: 16 },
+        { name: event.target.value, age: 16 },
       ]
     })
   }
+
+
   render() {
     return (
       <div className="App">
@@ -33,13 +35,9 @@ class App extends Component {
         <Person 
           name={ this.state.persons[2].name} 
           age={ this.state.persons[2].age } 
-          click={ this.switchNameHandler } />
+          click={ this.switchNameHandler } 
+          changed={ this.changeName} />
         <button onClick={this.switchNameHandler}>Be young again!</button>
-        {
-          // switchNameHandler wykorzystywana jako props
-          // Person.js --> <p onClick={props.click}>I'm {props.name} and I am {props.age} years old :)</p>
-          // Wywołanie funkcji po kliknięciu w dowolny element <p>
-        }
       </div>
     );
   }
