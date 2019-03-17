@@ -15,7 +15,7 @@ const Table = props => {
             </thead>
             <tbody>
                 {countries.map(country => (
-                    <tr key = {country.id}>
+                    <tr key = {Math.random()}>
                         <td>{country.name}</td>
                         <td>{country.capital}</td>
                         <td>{country.region}</td>
