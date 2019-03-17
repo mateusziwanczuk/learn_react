@@ -1,5 +1,6 @@
 import React from 'react';
-import Table from './Components/Table'
+import Table from './Components/Table';
+import FilterForm from './Components/FilterForm';
 
 class App extends React.Component {
   state = {
@@ -14,6 +15,7 @@ class App extends React.Component {
     return (
       <>
         <h1>Countries</h1>
+        <FilterForm onFilterChange={filter => console.log('filter changed', filter)}/>
         <Table countries = {this.state.countries} />
       </>
     );
