@@ -1,4 +1,5 @@
 import React from 'react';
+import Table from './Components/Table'
 
 class App extends React.Component {
   state = {
@@ -7,17 +8,13 @@ class App extends React.Component {
   componentDidMount() {
     fetch('http://localhost:3000/countries.json')
       .then(res => res.json())
-      .then(countries=> this.setState({countries}))
+      .then(countries => this.setState({countries}))
   }
   render() {
     return (
       <>
         <h1>Countries</h1>
-        <ul>
-            {this.state.countries.map(country => (
-                <li>{country.name}</li>
-            ))}
-        </ul>
+        <Table countries = {this.state.countries} />
       </>
     );
   }
