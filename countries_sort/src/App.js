@@ -21,7 +21,7 @@ class App extends React.Component {
         <h1>Countries</h1>
         <FilterForm onFilterChange={filter => this.setState({filterCountries: filter})}/>
         <Table countries = {this.state.countries
-          .filter(country => country.name.includes(this.state.filterCountries.text))} 
+          .filter(country => country.name.toLowerCase().includes(this.state.filterCountries.text))} 
         />
       </>
     );
