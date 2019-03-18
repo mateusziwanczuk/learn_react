@@ -14,6 +14,12 @@ class FilterForm extends React.Component {
         return (
             <form>
                 <input type="text" value={this.state.value} onChange={this.onInputChange} />
+                <select>
+                    <option value="">Region</option>
+                    {this.props.regions.map(region => (
+                        <option value={region}>{region}</option>
+                    ))}
+                </select>
             </form>
         )
     }

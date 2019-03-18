@@ -5,6 +5,7 @@ import FilterForm from './Components/FilterForm';
 class App extends React.Component {
   state = {
     countries: [],
+    regions: [],
     filterCountries: {
       text: ''
     }
@@ -13,15 +14,16 @@ class App extends React.Component {
     fetch('http://localhost:3000/countries.json')
       .then(res => res.json())
       .then(countries => this.setState({countries}))
-      // .then(countries => this.setState({countries: countries})
   }
   render() {
     return (
       <>
         <h1>Countries</h1>
-        <FilterForm onFilterChange={filter => this.setState({filterCountries: filter})}/>
+        <FilterForm onFilterChange={filter => this.setState({filterCountries: filter})} regions={this.state.regions} />
         <Table countries = {this.state.countries
-          .filter(country => country.name.toLowerCase().includes(this.state.filterCountries.text))} 
+          .filter(country => country.name
+          .toLowerCase()
+          .includes(this.state.filterCountries.text))} 
         />
       </>
     );
