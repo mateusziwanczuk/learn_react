@@ -13,7 +13,13 @@ class App extends React.Component {
   componentDidMount() {
     fetch('http://localhost:3000/countries.json')
       .then(res => res.json())
-      .then(countries => this.setState({countries}))
+      .then(countries => {
+        const regions = countries.reduce((acc, country) => {
+            country.region.split(' ').forEach(region => acc.add(region));
+            return acc;
+        }, new Set());
+        this.setState({ countries, regions: [...regions]});
+    });
   }
   render() {
     return (
