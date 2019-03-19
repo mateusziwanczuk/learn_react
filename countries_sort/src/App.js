@@ -9,6 +9,10 @@ class App extends React.Component {
     filter: {
       text: '',
       region: '',
+    },
+    order: {
+      field: 'name',
+      dir: 'ASC',
     }
   }
   componentDidMount() {
@@ -23,22 +27,37 @@ class App extends React.Component {
     });
   }
   getData() {
-      return this.state.countries.filter(
+      return this.state.countries
+      .filter(
           country => {
               const countryNameLowerCased = country.name.toLowerCase();
               const textFilterLowerCased = this.state.filter.text.toLowerCase();
               const countryRegion = country.region;
               const regionFilter = this.state.filter.region;
               return countryNameLowerCased.includes(textFilterLowerCased) && countryRegion.includes(regionFilter);
+          })
+      .sort((countryA, countryB) => {
+          const fieldA = countryA[this.state.order.field];
+          const fieldB = countryB[this.state.order.field];
+
+          if (fieldA > fieldB){
+            return this.state.order.dir === 'ASC' ? 1 : -1;
+          } else if (fieldA === fieldB) {
+            return 0;
+          } else {
+            return this.state.order.dir === 'ASC' ? -1 : 1;
           }
-      )
+        })
+  }
+  onOrderChange = order => {
+    this.setState({ order })
   }
   render() {
       return(
       <>
           <h1>Countries</h1>
-          <FilterForm onFilterChange={filter => this.setState({filter})} regions={this.state.regions}/>
-          <Table countries={this.getData()}/>
+          <FilterForm regions={this.state.regions} onFilterChange={filter => this.setState({filter})} />
+          <Table countries={this.getData()} order={this.state.order} onOrderChange={this.onOrderChange} />
       </>
       ) 
   }

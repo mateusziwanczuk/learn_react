@@ -1,16 +1,36 @@
 import React from 'react'
 
 const Table = props => {
-    const countries = props.countries;
+    const {countries, order: {field, dir}} = props;
+    const createOnHeaderClick = fieldToOrderBy => {
+        return () => {
+            let dirToSet;
+            if (fieldToOrderBy === field) {
+                dirToSet = dir === 'ASC' ? 'DESC' : 'ASC'
+            } else {
+                dirToSet = 'ASC'
+            }
+            props.onOrderChange({
+                field: fieldToOrderBy,
+                dir: dirToSet,
+            })
+        }
+    }
+    const arrow = dir === 'ASC' ? '⯆' : '⯅';
     return(
         <table>
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Capital</th>
-                    <th>Region</th>
-                    <th>Population</th>
-                    <th>Area</th>
+                    <th onClick={createOnHeaderClick('name')}>
+                        Name { field === 'name' && arrow } </th>
+                    <th onClick={createOnHeaderClick('capital')}>
+                        Capital { field === 'capital' && arrow }</th>
+                    <th onClick={createOnHeaderClick('region')}>
+                        Region { field === 'region' && arrow }</th>
+                    <th onClick={createOnHeaderClick('population')}>
+                        Population { field === 'population' && arrow }</th>
+                    <th onClick={createOnHeaderClick('area')}>
+                        Area { field === 'area' && arrow }</th>
                 </tr>
             </thead>
             <tbody>
