@@ -1,0 +1,43 @@
+h1 {
+    font-weight: 500;
+    letter-spacing: 1.3rem;
+    margin-top: 3rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+form {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+select {
+    background: rgb(147, 194, 255);
+    color: white;
+    height: 1.3rem;
+    margin-left: 2rem;
+}
+
+input {
+    width: 20%;
+}
+
+th {
+    border: 1px solid black;
+    padding: 0.5rem;
+}
+
+td {
+    border: 1px solid lightblue;
+    padding: 1% 1% 1% 1rem;
+}
+
+table {
+    margin: 0 auto;
+    width: 70vw;
+}
+
+img {
+    border: 0.3px solid rgb(221, 221, 221);
+    width: 1.1rem;
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import Table from './Components/Table';
 import FilterForm from './Components/FilterForm';
+import './App.css'
 
 class App extends React.Component {
   state = {
@@ -55,7 +56,7 @@ class App extends React.Component {
   render() {
       return(
       <>
-          <h1>Countries</h1>
+          <h1><span>🗺</span>Countries</h1>
           <FilterForm regions={this.state.regions} onFilterChange={filter => this.setState({filter})} />
           <Table countries={this.getData()} order={this.state.order} onOrderChange={this.onOrderChange} />
       </>

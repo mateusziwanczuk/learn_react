@@ -1,4 +1,5 @@
 import React from 'react'
+import '../App.css'
 
 const Table = props => {
     const {countries, order: {field, dir}} = props;
@@ -30,13 +31,13 @@ const Table = props => {
                     <th onClick={createOnHeaderClick('population')}>
                         Population { field === 'population' && arrow }</th>
                     <th onClick={createOnHeaderClick('area')}>
-                        Area { field === 'area' && arrow }</th>
+                        Area (km²) { field === 'area' && arrow }</th>
                 </tr>
             </thead>
             <tbody>
                 {countries.map(country => (
                     <tr key = {Math.random()}>
-                        <td>{country.name}</td>
+                        <td><img src={country.flag} alt="flag"/> {country.name}</td>
                         <td>{country.capital}</td>
                         <td>{country.region}</td>
                         <td>{country.population}</td>
