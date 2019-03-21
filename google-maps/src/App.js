@@ -12,16 +12,16 @@ class App extends React.Component {
         <Marker onClick={this.onMarkerClick}
           name={'Current location'} />
 
-        <InfoWindow onClose={this.onInfoWindowClose}>
+        {/* <InfoWindow onClose={this.onInfoWindowClose}>
           <div>
             <h1>{this.state.selectedPlace.name}</h1>
           </div>
-        </InfoWindow>
+        </InfoWindow> */}
       </Map>
     );
   }
 }
 
 export default GoogleApiWrapper({
-  apiKey: (YOUR_GOOGLE_API_KEY_GOES_HERE)
+  apiKey: ("AIzaSyA-rX02F5tZVbdL8CsrGr78JvY3oa9akMY")
 })(App)
