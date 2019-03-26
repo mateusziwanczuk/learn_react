@@ -66,7 +66,7 @@ class MainNav extends React.Component {
 				>
 					<div style={{margin: "40px 0 30px", textAlign: "center"}}>
 						<h1 style={{fontSize: "4rem", fontFamily: 'Courgette'}}>React</h1>
-						<h5 style={{fontSize: "0.7rem", fontFamily: 'Arial', letterSpacing: "0.6rem", marginTop: "10px"}}>SUPERMARKET</h5>
+						<h5 style={{fontSize: "0.7rem", fontFamily: 'Roboto', letterSpacing: "0.6rem", marginTop: "10px"}}>SUPERMARKET</h5>
 					</div>
 					<Nav id="home">
 						<NavLink to="/home">

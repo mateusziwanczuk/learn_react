@@ -16,7 +16,7 @@
 .Home__container__header {
     color: #0cadad;
     letter-spacing: 1rem;
-    padding-top: 15vh;
+    padding-top: 10vh;
 }
 
 .Home__container__header h1 {
@@ -30,4 +30,26 @@
     font-size: 3rem;
     letter-spacing: 2rem;
     text-transform: uppercase;
+}
+
+.Home__container__info {
+    display: flex;
+    margin: 3% 5% 5% 5%;
+}
+
+.Home__container__info__panel {
+    border: 1px solid lightgrey;
+    width: 100%;
+    margin: 3%;
+    padding: 3%;
+    background: rgba(255, 255, 255, 0.555);
+    border-radius: 25px;
+}
+
+.Home__container__info__panel p {
+    font-size: 2.2rem;
+    font-family: Arial;
+    letter-spacing: 0.5rem;
+    margin-top: 1rem;
+    color: #0cadad;
 }
