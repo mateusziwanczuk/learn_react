@@ -1,0 +1,240 @@
+[{
+    "id": 1,
+    "contactInfo": {
+        "address": {
+            "street": "3681 Veltri Drive",
+            "zipcode": "99501",
+            "city": "Anchorage",
+            "state": "Alaska"
+        },
+        "phone": "907-297-2483"
+    }
+},
+{
+    "id": 2,
+    "contactInfo": {
+        "address": {
+            "street": "3621 Burwell Heights Road",
+            "zipcode": "77063",
+            "city" : "Houston",
+            "state": "Texas"
+        },
+        "phone": "409-502-9644"
+    }
+},
+{
+    "id": 3,
+    "contactInfo": {
+        "address": {
+            "street": "3243 Prudence Street",
+            "zipcode": "48219",
+            "city" : "Detroit",
+            "state": "Michigan"
+        },
+        "phone": "313-310-5426"
+    }
+},
+{
+    "id": 4,
+    "contactInfo": {
+        "address": {
+            "street": "3700 Sunny Day Drive",
+            "zipcode": "90017",
+            "city" : "Los Angeles",
+            "state": "California"
+        },
+        "phone": "714-872-9003"
+    }
+},
+{
+    "id": 5,
+    "contactInfo": {
+        "address": {
+            "street": "4332 Coolidge Street",
+            "zipcode": "32801",
+            "city" : "Orlando",
+            "state": "Florida"
+        },
+        "phone": "407-220-2940"
+    }
+},
+{
+    "id": 6,
+    "contactInfo": {
+        "address": {
+            "street": "3523 Martha Street",
+            "zipcode": "85034",
+            "city" : "Phoenix",
+            "state": "Arizona"
+        },
+        "phone": "928-707-2826"
+    }
+},
+{
+    "id": 7,
+    "contactInfo": {
+        "address": {
+            "street": "4811 Hickory Ridge Drive",
+            "zipcode": "89109",
+            "city" : "Las Vegas",
+            "state": "Nevada"
+        },
+        "phone": "702-784-5325"
+    }
+},
+{
+    "id": 8,
+    "contactInfo": {
+        "address": {
+            "street": "3407 Godfrey Street",
+            "zipcode": "97229",
+            "city" : "Portland",
+            "state": "Oregon"
+        },
+        "phone": "503-617-6041"
+    }
+},
+{
+    "id": 9,
+    "contactInfo": {
+        "address": {
+            "street": "4200 West Drive",
+            "zipcode": "60607",
+            "city" : "Chicago",
+            "state": "Illinois"
+        },
+        "phone": "312-433-3291"
+    }
+},
+{
+    "id": 10,
+    "contactInfo": {
+        "address": {
+            "street": "1807 Buck Drive",
+            "zipcode": "84104",
+            "city" : "Salt Lake City",
+            "state": "Utah"
+        },
+        "phone": "801-988-2624"
+    }
+},
+{
+    "id": 11,
+    "contactInfo": {
+        "address": {
+            "street": "3054 Joyce Street",
+            "zipcode": "36542",
+            "city" : "Gulf Shores",
+            "state": "Alabama"
+        },
+        "phone": "251-968-2977"
+    }
+},
+{
+    "id": 12,
+    "contactInfo": {
+        "address": {
+            "street": "4653 Sunset Drive",
+            "zipcode": "71601",
+            "city" : "Pine Bluff",
+            "state": "Arkansas"
+        },
+        "phone": "870-663-2168"
+    }
+},
+{
+    "id": 13,
+    "contactInfo": {
+        "address": {
+            "street": "4653 Sunset Drive",
+            "zipcode": "71601",
+            "city" : "Pine Bluff",
+            "state": "Arkansas"
+        },
+        "phone": "870-663-2168"
+    }
+},
+{
+    "id": 14,
+    "contactInfo": {
+        "address": {
+            "street": "3135 Sampson Street",
+            "zipcode": "80014",
+            "city" : "Aurora",
+            "state": "Colorado"
+        },
+        "phone": "303-568-6401"
+    }
+},
+{
+    "id": 15,
+    "contactInfo": {
+        "address": {
+            "street": "3421 Counts Lane",
+            "zipcode": "06105",
+            "city" : "West Hartford",
+            "state": "Connecticut"
+        },
+        "phone": "860-231-3163"
+    }
+},
+{
+    "id": 16,
+    "contactInfo": {
+        "address": {
+            "street": "99 Kuhl Avenue",
+            "zipcode": "30329",
+            "city" : "Atlanta",
+            "state": "Georgia"
+        },
+        "phone": "678-709-7359"
+    }
+},
+{
+    "id": 17,
+    "contactInfo": {
+        "address": {
+            "street": "3192 Kelly Drive",
+            "zipcode": "24945",
+            "city" : "Greenville",
+            "state": "West Virginia"
+        },
+        "phone": "304-832-0776"
+    }
+},
+{
+    "id": 18,
+    "contactInfo": {
+        "address": {
+            "street": "2333 Henry Ford Avenue",
+            "zipcode": "74105",
+            "city" : "Tulsa",
+            "state": "Oklahoma"
+        },
+        "phone": "918-266-9625"
+    }
+},
+{
+    "id": 19,
+    "contactInfo": {
+        "address": {
+            "street": "1350 Cooks Mine Road",
+            "zipcode": "86515",
+            "city" : "Twin Lakes",
+            "state": "New Mexico"
+        },
+        "phone": "505-735-0865"
+    }
+},
+{
+    "id": 20,
+    "contactInfo": {
+        "address": {
+            "street": "1833 Benson Street",
+            "zipcode": "54013",
+            "city" : "Glenwood City",
+            "state": "Wisconsin"
+        },
+        "phone": "715-265-8754"
+    }
+}]

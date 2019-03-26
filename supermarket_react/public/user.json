@@ -1,0 +1,15 @@
+{
+    "id": 1,
+    "name": "Mateusz",
+    "nickname": "matzh",
+    "email": "iwanczukmateusz@gmail.com",
+    "address": {
+        "street": "2248 Williams Mine Road",
+        "zipcode": "99503",
+        "city": "Anchorage",
+        "state": "Alaska"
+    },
+    "phone": "907-992-5061",
+    "avatar": "/img/avatar.png",
+    "registered": "26 March 2019"
+}

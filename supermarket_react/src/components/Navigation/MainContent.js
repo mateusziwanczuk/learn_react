@@ -8,9 +8,10 @@ import Basket from "../Basket/Basket"
 import Summary from "../Summary/Summary"
 
 const Content = styled.div`
-	width: 100%;
+	background: url("/img/background.jpg");
+	background-size: cover;
 	height: 100vh;
-	background: lightcyan;
+	width: 100%;
 `;
 
 const MainContent = () => {
