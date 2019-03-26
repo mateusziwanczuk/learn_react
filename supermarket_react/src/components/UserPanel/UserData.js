@@ -12,10 +12,13 @@ class Nickname extends React.Component {
     componentDidMount(){
         fetch('user.json')
             .then(response => response.json())
-            .then(value => this.setState({nickname: value.nickname, registered: value.registered }))
-        fetch('user.json')
-            .then(response => response.json())
-            .then(value => this.setState({ email: value.email, address: `${value.address.street} ${value.address.zipcode} ${value.address.city}`, phone: value.phone}))
+            .then(value => this.setState({
+                nickname: value.nickname, 
+                registered: value.registered, 
+                email: value.email, 
+                address: `${value.address.street} ${value.address.zipcode} ${value.address.city}`, 
+                phone: value.phone 
+            }))
     }
     editUserData = () => {
         const doInputsShow = this.state.showInput;
@@ -29,7 +32,6 @@ class Nickname extends React.Component {
             inputs.forEach( input => input.classList.remove("unvisible"));
         }
     }
-    editNickname = (e) => { this.setState({ nickname: e.target.value }) }
     editEmail = (e) => { this.setState({ email: e.target.value }) }
     editAddress = (e) => { this.setState({ address: e.target.value }) }
     editPhone = (e) => { this.setState({ phone: e.target.value }) }
@@ -39,9 +41,6 @@ class Nickname extends React.Component {
             <>
                 <span>Registered: {this.state.registered}</span>
                 <h2><span role="img" aria-label="user">👤</span> Login: {this.state.nickname}</h2> 
-                    <div className="change__data__container unvisible">
-                        <input type="text" value={this.state.nickname} onChange={this.editNickname}></input><button onClick={this.editUserData}>OK</button>    
-                    </div>
                 <h2><span role="img" aria-label="phone">📞</span> Contact: </h2>
                     <h4>e-mail: {this.state.email}</h4>
                         <div className="change__data__container unvisible">
