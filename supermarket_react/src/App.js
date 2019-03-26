@@ -1,15 +1,26 @@
-import React, { Component, Fragment } from 'react';
-import Navigation from './Components/Navigation/Navigation'
-import './App.css';
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import styled from "styled-components";
+import MainNav from "./components/Navigation/MainNav";
+import MainContent from "./components/Navigation/MainContent";
 
-class App extends Component {
-  render() {
-    return (
-      <Fragment>
-        <Navigation />
-      </Fragment>
-    );
-  }
+const AppContainer = styled.div`
+	display: flex;
+	height: 100vh;
+	width: 100%;
+`;
+
+class App extends React.Component {
+	render() {
+		return (
+			<BrowserRouter>
+				<AppContainer>
+					<MainNav />
+					<MainContent />
+				</AppContainer>
+			</BrowserRouter>
+		);
+	}
 }
 
 export default App;
