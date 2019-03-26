@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+}
+
+.Home__container {
+    background-image: url("/img/background.jpg");
+    background-size: cover;
+    height: 100%;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.Home__container__header {
+    color: #0cadad;
+    letter-spacing: 1rem;
+    padding-top: 15vh;
+}
+
+.Home__container__header h1 {
+    font-family: 'Courgette', cursive;
+    font-size: 15rem;
+    text-shadow: 0 0 10px rgb(255, 255, 255);
+}
+
+.Home__container__header p {
+    font-family: 'Arial';
+    font-size: 3rem;
+    letter-spacing: 2rem;
+    text-transform: uppercase;
+}
