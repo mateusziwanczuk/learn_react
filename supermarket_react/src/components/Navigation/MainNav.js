@@ -64,7 +64,7 @@ class MainNav extends React.Component {
 					theme={theme}
 					onItemSelection={this.onItemSelection}
 				>
-					<Nav id="home">
+					<Nav id="home" style={{ marginTop: "50px" }}>
 						<NavLink to="/home">
 							<IconCnt>
 								<Icon icon={home} />
