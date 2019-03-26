@@ -41,7 +41,7 @@ class Home extends React.Component {
                         <IconCnt>
 							<Icon icon={shoppingCart} />
 						</IconCnt>
-                        <p>Do shopping online</p>
+                        <p>Do shopping</p>
                     </div>
                     <div className="Home__container__info__panel">
                         <IconCnt>

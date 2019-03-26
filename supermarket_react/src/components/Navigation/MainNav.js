@@ -64,10 +64,12 @@ class MainNav extends React.Component {
 					theme={theme}
 					onItemSelection={this.onItemSelection}
 				>
-					<div style={{margin: "40px 0 30px", textAlign: "center"}}>
-						<h1 style={{fontSize: "4rem", fontFamily: 'Courgette'}}>React</h1>
-						<h5 style={{fontSize: "0.7rem", fontFamily: 'Roboto', letterSpacing: "0.6rem", marginTop: "10px"}}>SUPERMARKET</h5>
-					</div>
+					<NavLink to="/">
+						<div style={{margin: "30px 0 10px", textAlign: "center"}}>
+							<h1 style={{fontSize: "4rem", fontFamily: 'Courgette'}}>React</h1>
+							<h5 style={{fontSize: "0.7rem", fontFamily: 'Roboto', letterSpacing: "0.6rem", marginTop: "10px"}}>SUPERMARKET</h5>
+						</div>
+					</NavLink>
 					<Nav id="home">
 						<NavLink to="/home">
 							<IconCnt>

@@ -16,6 +16,7 @@ const Content = styled.div`
 const MainContent = () => {
 	return (
 		<Content>
+			<Route exact path="/" component={ Home } />
 			<Route path="/home" component={ Home } />
 			<Route path="/user-panel" component={ UserPanel } />
 			<Route path="/markets" component={ Markets } />
