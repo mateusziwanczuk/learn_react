@@ -7,6 +7,9 @@ import { user } from "react-icons-kit/ikons/user";
 import { shop } from "react-icons-kit/ikons/shop";
 import { shoppingCart } from "react-icons-kit/fa/shoppingCart";
 import { creditCardAlt } from "react-icons-kit/fa/creditCardAlt";
+import { bubbles3 } from 'react-icons-kit/icomoon/bubbles3';
+import { userTimes } from 'react-icons-kit/fa/userTimes';
+
 import styled from "styled-components";
 
 const Navigation = styled.div`
@@ -108,6 +111,24 @@ class MainNav extends React.Component {
 								<Icon icon={creditCardAlt} />
 							</IconCnt>
 							<Text>Summary the order</Text>
+						</NavLink>
+					</Nav>
+
+
+					<Nav id="support">
+						<NavLink to="/support">
+							<IconCnt>
+								<Icon icon={bubbles3} />
+							</IconCnt>
+							<Text>Support</Text>
+						</NavLink>
+					</Nav>
+					<Nav id="logout">
+						<NavLink>
+							<IconCnt>
+								<Icon icon={userTimes} />
+							</IconCnt>
+							<Text>Log out</Text>
 						</NavLink>
 					</Nav>
 				</SideNav>
