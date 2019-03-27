@@ -18,9 +18,11 @@ class UserPanel extends React.Component {
         return(
             <div className="user__container">
                 <div className="user__container__left">
-                    <h1 className="sayHello">Hello {this.state.name}!</h1>
-                    <Avatar />
-                    <UserData />
+                    <div className="user__container__left__top">
+                        <h1 className="sayHello">Hello {this.state.name}!</h1>
+                        <Avatar />
+                        <UserData />
+                    </div>
                 </div>
                 <div className="user__container__right">
                 </div>
