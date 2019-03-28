@@ -5,7 +5,8 @@ class Nickname extends React.Component {
         registered: "",
         nickname: "",
         email: "",
-        address: "",
+        address1: "",
+        address2: "",
         phone: "",
         showInput: false,
     }

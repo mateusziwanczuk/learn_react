@@ -116,7 +116,7 @@ class MainNav extends React.Component {
 
 
 					<Nav id="support">
-						<NavLink>
+						<NavLink to="/support">
 							<IconCnt>
 								<Icon icon={bubbles3} />
 							</IconCnt>
@@ -124,7 +124,7 @@ class MainNav extends React.Component {
 						</NavLink>
 					</Nav>
 					<Nav id="logout">
-						<NavLink>
+						<NavLink to="/logout"> 
 							<IconCnt>
 								<Icon icon={userTimes} />
 							</IconCnt>
