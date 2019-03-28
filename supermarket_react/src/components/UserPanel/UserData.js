@@ -28,10 +28,14 @@ class Nickname extends React.Component {
             showInput: !doInputsShow 
         });
         let inputs = document.querySelectorAll(".change__data__container");
+        let editButton = document.querySelector(".edit__button");
         if (this.state.showInput) {
             inputs.forEach( input => input.classList.add("unvisible"));
+            editButton.innerHTML = "Edit";
         } else {
             inputs.forEach( input => input.classList.remove("unvisible"));
+            editButton.innerHTML = "Save";
+
         }
     }
     editEmail = (e) => { this.setState({ email: e.target.value }) }
@@ -42,7 +46,7 @@ class Nickname extends React.Component {
     render (){
         return(
             <div className="user__container__left__top__userdata">
-                <span>Registered: {this.state.registered}</span>
+                <span style={{fontSize: "1.2rem"}}>Registered: {this.state.registered}</span>
                 <h2>
                     <span role="img" aria-label="user">👤 </span> 
                     Login: {this.state.nickname}
@@ -61,18 +65,17 @@ class Nickname extends React.Component {
                         <div>
                             <h4>{this.state.email}</h4>
                                 <div className="change__data__container unvisible">
-                                    <input type="email" value={this.state.email} onChange={this.editEmail}></input><button onClick={this.editUserData}>OK</button>
+                                    <input type="email" value={this.state.email} onChange={this.editEmail}></input>
                                 </div>
                             <h4>{this.state.address1}</h4>
                             <h4>{this.state.address2}</h4>
                                 <div className="change__data__container unvisible">
                                     <input type="text" value={this.state.address1} onChange={this.editAddress1}></input>
                                     <input type="text" value={this.state.address2} onChange={this.editAddress2}></input>
-                                    <button onClick={this.editUserData}>OK</button>
                                 </div>
                             <h4>{this.state.phone}</h4>
                                 <div className="change__data__container unvisible">
-                                    <input type="text" value={this.state.phone} onChange={this.editPhone}></input><button onClick={this.editUserData}>OK</button>
+                                    <input type="text" value={this.state.phone} onChange={this.editPhone}></input>
                                 </div>
                         </div>
                     </div>  

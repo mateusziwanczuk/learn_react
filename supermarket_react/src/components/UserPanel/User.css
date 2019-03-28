@@ -50,7 +50,7 @@
         }
 
                 .user__container__left__top__userdata * {
-                    line-height: 150%;
+                    line-height: 180%;
                 } 
 
                 .user__container__left__top__userdata__contact {
@@ -62,12 +62,7 @@
                 }
 
                 .user__container__left__top__userdata input { 
-                    width: 60%;
-                }
-
-                .change__data__container button {
-                    height: 100%;
-                    width: 20%;
+                    width: 80%;
                 }
 
                 .edit__button {
