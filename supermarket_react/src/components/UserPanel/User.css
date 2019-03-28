@@ -45,23 +45,24 @@
         }
 
         .user__container__left__top__userdata {
-            margin-left: 3rem;
+            margin-left: 2rem;
+            width: 60%;
         }
 
                 .user__container__left__top__userdata * {
                     line-height: 150%;
                 } 
 
+                .user__container__left__top__userdata__contact {
+                    display: flex;
+                }
+
+                .user__container__left__top__userdata__contact * {
+                    padding-right: 0.6rem;
+                }
+
                 .user__container__left__top__userdata input { 
-                    width: 70%;
-                }
-
-                .user__container__left__top__userdata__address2 {
-                    margin-left: 7rem;
-                }
-
-                .change__data__container {
-                    margin-left: 7rem;
+                    width: 60%;
                 }
 
                 .change__data__container button {

@@ -45,21 +45,31 @@ class Nickname extends React.Component {
                 <span>Registered: {this.state.registered}</span>
                 <h2><span role="img" aria-label="user">👤</span> Login: {this.state.nickname}</h2> 
                 <h2><span role="img" aria-label="phone">📞</span> Contact: </h2>
-                    <h4>e-mail: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{this.state.email}</h4>
-                        <div className="change__data__container unvisible">
-                            <input type="email" value={this.state.email} onChange={this.editEmail}></input><button onClick={this.editUserData}>OK</button>    
+                    <div className="user__container__left__top__userdata__contact">
+                        <div>
+                            <h4>e-mail: </h4>
+                            <h4>address: </h4>
+                            <br />
+                            <h4>phone: </h4>
                         </div>
-                    <h4>address: &nbsp;{this.state.address1}</h4>
-                    <h4 className="user__container__left__top__userdata__address2">{this.state.address2}</h4>
-                        <div className="change__data__container unvisible">
-                            <input type="text" value={this.state.address1} onChange={this.editAddress1}></input>
-                            <input type="text" value={this.state.address2} onChange={this.editAddress2}></input>
-                            <button onClick={this.editUserData}>OK</button> 
+                        <div>
+                            <h4>{this.state.email}</h4>
+                                <div className="change__data__container unvisible">
+                                    <input type="email" value={this.state.email} onChange={this.editEmail}></input><button onClick={this.editUserData}>OK</button>
+                                </div>
+                            <h4>{this.state.address1}</h4>
+                            <h4>{this.state.address2}</h4>
+                                <div className="change__data__container unvisible">
+                                    <input type="text" value={this.state.address1} onChange={this.editAddress1}></input>
+                                    <input type="text" value={this.state.address2} onChange={this.editAddress2}></input>
+                                    <button onClick={this.editUserData}>OK</button>
+                                </div>
+                            <h4>{this.state.phone}</h4>
+                                <div className="change__data__container unvisible">
+                                    <input type="text" value={this.state.phone} onChange={this.editPhone}></input><button onClick={this.editUserData}>OK</button>
+                                </div>
                         </div>
-                    <h4>phone: &nbsp;&nbsp;&nbsp;&nbsp;{this.state.phone} </h4>   
-                        <div className="change__data__container unvisible">
-                            <input type="text" value={this.state.phone} onChange={this.editPhone}></input><button onClick={this.editUserData}>OK</button>    
-                        </div>
+                    </div>
                 <div>
                     <div className="button" onClick={this.editUserData}>
                         <span>Edit Profile</span>
