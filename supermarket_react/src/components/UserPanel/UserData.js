@@ -43,8 +43,14 @@ class Nickname extends React.Component {
         return(
             <div className="user__container__left__top__userdata">
                 <span>Registered: {this.state.registered}</span>
-                <h2><span role="img" aria-label="user">👤</span> Login: {this.state.nickname}</h2> 
-                <h2><span role="img" aria-label="phone">📞</span> Contact: </h2>
+                <h2>
+                    <span role="img" aria-label="user">👤 </span> 
+                    Login: {this.state.nickname}
+                </h2> 
+                <h2>
+                    <span role="img" aria-label="phone">📞 </span> 
+                    Contact <span className="edit__button" onClick={this.editUserData}>Edit</span>
+                </h2>
                     <div className="user__container__left__top__userdata__contact">
                         <div>
                             <h4>e-mail: </h4>
@@ -69,12 +75,7 @@ class Nickname extends React.Component {
                                     <input type="text" value={this.state.phone} onChange={this.editPhone}></input><button onClick={this.editUserData}>OK</button>
                                 </div>
                         </div>
-                    </div>
-                <div>
-                    <div className="button" onClick={this.editUserData}>
-                        <span>Edit Profile</span>
-                    </div>
-                </div>        
+                    </div>  
             </div>
         )
     }
