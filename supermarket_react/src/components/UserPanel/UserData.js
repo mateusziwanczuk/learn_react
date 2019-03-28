@@ -38,19 +38,19 @@ class Nickname extends React.Component {
 
     render (){
         return(
-            <>
+            <div className="user__container__left__top__userdata">
                 <span>Registered: {this.state.registered}</span>
                 <h2><span role="img" aria-label="user">👤</span> Login: {this.state.nickname}</h2> 
                 <h2><span role="img" aria-label="phone">📞</span> Contact: </h2>
-                    <h4>e-mail: {this.state.email}</h4>
+                    <h4>e-mail: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{this.state.email}</h4>
                         <div className="change__data__container unvisible">
                             <input type="email" value={this.state.email} onChange={this.editEmail}></input><button onClick={this.editUserData}>OK</button>    
                         </div>
-                    <h4>address: {this.state.address}</h4>
+                    <h4>address: &nbsp;{this.state.address}</h4>
                         <div className="change__data__container unvisible">
                             <input type="text" value={this.state.address} onChange={this.editAddress}></input><button onClick={this.editUserData}>OK</button>    
                         </div>
-                    <h4>phone: {this.state.phone} </h4>   
+                    <h4>phone: &nbsp;&nbsp;&nbsp;&nbsp;{this.state.phone} </h4>   
                         <div className="change__data__container unvisible">
                             <input type="text" value={this.state.phone} onChange={this.editPhone}></input><button onClick={this.editUserData}>OK</button>    
                         </div>
@@ -59,8 +59,7 @@ class Nickname extends React.Component {
                         <span>Edit Profile</span>
                     </div>
                 </div>        
-            </>
-
+            </div>
         )
     }
 }

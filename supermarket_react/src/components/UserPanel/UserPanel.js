@@ -1,4 +1,5 @@
 import React from 'react';
+import SayHello from './SayHello';
 import Avatar from './Avatar';
 import UserData from './UserData';
 
@@ -18,8 +19,8 @@ class UserPanel extends React.Component {
         return(
             <div className="user__container">
                 <div className="user__container__left">
+                    <SayHello />
                     <div className="user__container__left__top">
-                        <h1 className="sayHello">Hello {this.state.name}!</h1>
                         <Avatar />
                         <UserData />
                     </div>

@@ -116,7 +116,7 @@ class MainNav extends React.Component {
 
 
 					<Nav id="support">
-						<NavLink to="/support">
+						<NavLink>
 							<IconCnt>
 								<Icon icon={bubbles3} />
 							</IconCnt>
