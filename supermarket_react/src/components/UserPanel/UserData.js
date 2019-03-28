@@ -16,7 +16,8 @@ class Nickname extends React.Component {
                 nickname: value.nickname, 
                 registered: value.registered, 
                 email: value.email, 
-                address: `${value.address.street} ${value.address.zipcode} ${value.address.city}`, 
+                address1: value.address.street, 
+                address2: `${value.address.zipcode} ${value.address.city}`, 
                 phone: value.phone 
             }))
     }
@@ -33,7 +34,8 @@ class Nickname extends React.Component {
         }
     }
     editEmail = (e) => { this.setState({ email: e.target.value }) }
-    editAddress = (e) => { this.setState({ address: e.target.value }) }
+    editAddress1 = (e) => { this.setState({ address1: e.target.value }) }
+    editAddress2 = (e) => { this.setState({ address2: e.target.value }) }
     editPhone = (e) => { this.setState({ phone: e.target.value }) }
 
     render (){
@@ -46,9 +48,12 @@ class Nickname extends React.Component {
                         <div className="change__data__container unvisible">
                             <input type="email" value={this.state.email} onChange={this.editEmail}></input><button onClick={this.editUserData}>OK</button>    
                         </div>
-                    <h4>address: &nbsp;{this.state.address}</h4>
+                    <h4>address: &nbsp;{this.state.address1}</h4>
+                    <h4 className="user__container__left__top__userdata__address2">{this.state.address2}</h4>
                         <div className="change__data__container unvisible">
-                            <input type="text" value={this.state.address} onChange={this.editAddress}></input><button onClick={this.editUserData}>OK</button>    
+                            <input type="text" value={this.state.address1} onChange={this.editAddress1}></input>
+                            <input type="text" value={this.state.address2} onChange={this.editAddress2}></input>
+                            <button onClick={this.editUserData}>OK</button> 
                         </div>
                     <h4>phone: &nbsp;&nbsp;&nbsp;&nbsp;{this.state.phone} </h4>   
                         <div className="change__data__container unvisible">
