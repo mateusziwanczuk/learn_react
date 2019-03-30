@@ -17,22 +17,19 @@ class UserMarket extends React.Component {
         }
     }
     componentDidMount(){
-        fetch('markets.json')
-            .then(response => response.json())
         this.isMarketOpened();
     }
     isMarketOpened = () => {
         let date = new Date();
         let hourNow = date.getHours();
         let openClose = document.querySelector(".isMarketOpened")
-        if (hourNow < this.state.openingHours.open || hourNow > this.state.openingHours.close) {
+        if (hourNow < this.state.openingHours.open || hourNow >= this.state.openingHours.close) {
             openClose.innerHTML = "(Closed)"
             openClose.style.color = "red"
         } else {
             openClose.innerHTML = "(Opened)"
             openClose.style.color = "green"
         }
-        
     }
     render() { 
         return (
