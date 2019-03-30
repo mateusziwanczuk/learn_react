@@ -4,27 +4,35 @@ class UserMarket extends React.Component {
     state = {
         "contactInfo": {
             "address": {
-                "street": "",
-                "zipcode": "",
-                "city": "",
-                "state": ""
+                "street": "3681 Veltri Drive",
+                "zipcode": "99501",
+                "city": "Anchorage",
+                "state": "Alaska"
             },
-            "phone": ""
+            "phone": "907-297-2483"
+        },
+        "openingHours": {
+            "open": 7,
+            "close": 21
         }
     }
     componentDidMount(){
         fetch('markets.json')
             .then(response => response.json())
-            .then(this.setState({
-                "contactInfo": {
-                "address": {
-                    "street": "3681 Veltri Drive",
-                    "zipcode": "99501",
-                    "city": "Anchorage",
-                    "state": "Alaska"
-                },
-                "phone": "907-297-2483"
-            }}))
+        this.isMarketOpened();
+    }
+    isMarketOpened = () => {
+        let date = new Date();
+        let hourNow = date.getHours();
+        let openClose = document.querySelector(".isMarketOpened")
+        if (hourNow < this.state.openingHours.open || hourNow > this.state.openingHours.close) {
+            openClose.innerHTML = "(Closed)"
+            openClose.style.color = "red"
+        } else {
+            openClose.innerHTML = "(Opened)"
+            openClose.style.color = "green"
+        }
+        
     }
     render() { 
         return (
@@ -41,7 +49,10 @@ class UserMarket extends React.Component {
                             {this.state.contactInfo.address.state}<br/>
                             <br/>
                             Contact: {this.state.contactInfo.phone}<br/>
-                            Opening hours: 
+                            <br/>
+                            Opening hours:<br/>
+                            <span>{this.state.openingHours.open}:00 - {this.state.openingHours.close}:00 </span>
+                            <span className="isMarketOpened"></span>
                         </h4>
                     </div>
                 </div>

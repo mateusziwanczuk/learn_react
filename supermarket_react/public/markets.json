@@ -8,6 +8,10 @@
             "state": "Alaska"
         },
         "phone": "907-297-2483"
+    },
+    "openingHours": {
+        "open": 7,
+        "close": 21
     }
 },
 {
