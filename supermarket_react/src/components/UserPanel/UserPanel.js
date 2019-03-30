@@ -2,6 +2,7 @@ import React from 'react';
 import SayHello from './SayHello';
 import Avatar from './Avatar';
 import UserData from './UserData';
+import UserMarket from './UserMarket';
 
 import './User.css';
 
@@ -26,6 +27,7 @@ class UserPanel extends React.Component {
                     </div>
                 </div>
                 <div className="user__container__right">
+                    <UserMarket />
                 </div>
             </div>
         )
