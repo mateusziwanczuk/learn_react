@@ -15,7 +15,6 @@ class UserPanel extends React.Component {
             .then(response => response.json())
             .then(value => this.setState({name: value.name}))
     }
-    
     render (){
         return(
             <div className="user__container">
