@@ -8,7 +8,7 @@ import './User.css';
 
 class UserPanel extends React.Component {
     state = {
-        name: "",
+        name: ""
     }
     componentDidMount(){
         fetch('user.json')

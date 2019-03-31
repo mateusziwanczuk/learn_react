@@ -2,6 +2,7 @@ import React from 'react';
 
 class UserMarket extends React.Component {
     state = {
+        // "markets": []
         "contactInfo": {
             "address": {
                 "street": "3681 Veltri Drive",
@@ -17,6 +18,11 @@ class UserMarket extends React.Component {
         }
     }
     componentDidMount(){
+        fetch('markets.json')
+            .then(response => response.json())
+            .then(markets => this.setState({markets})
+            )
+            
         this.isMarketOpened();
     }
     isMarketOpened = () => {
@@ -34,7 +40,8 @@ class UserMarket extends React.Component {
     render() { 
         return (
             <>
-                <h1 className="user__container__right__header">Your market</h1>
+                {/* {console.log(this.state) */}
+                    <h1 className="user__container__right__header">Your market</h1>
                 <div className="user__container__right__market">
                     <img src="/img/react_market.jpg" alt="market_photo"/>
                     <div className="user__container__right__market__marketdata">

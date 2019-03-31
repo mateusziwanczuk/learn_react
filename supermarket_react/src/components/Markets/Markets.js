@@ -1,9 +1,12 @@
 import React from 'react'
+import MarketsList from './MarketsList'
 
 class Markets extends React.Component {
     render(){
         return(
-            <h1>Markets</h1>
+            <>
+                <MarketsList />
+            </>
         )
     }
 }
