@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
-import Players from './Players.json';
 import './App.css';
 
 class App extends Component {
   state = {
+    players: [],
     highlightningColor: "button-blue"
   };
+  componentDidMount() {
+		fetch("players.json")
+			.then(response => response.json())
+      .then(players => this.setState({ players }));
+  }
   changeColorBlue = e => {
     this.setState( 
       { highlightningColor: e.target.className = "button-blue" }
@@ -35,7 +40,7 @@ class App extends Component {
             </tr>
           </thead>
           <tbody>
-            {Players.map(
+            {this.state.players.map(
               player =>
                 <tr key={player.id} className={player.points > 100 ? this.state.highlightningColor : null}>
                   <td className="usernameColumn">{player.username}</td>
@@ -46,18 +51,18 @@ class App extends Component {
             <tr>
               <td className="greyBackground"><b>Total</b></td>
               <td className="pointsColumn greyBackground"><b>
-                { Players
-                  .map(Players => Players.points)
-                  .reduce((a, b) => a + b)
+                { this.state.players
+                  .map(player => player.points)
+                  .reduce((a, b) => a + b, 0)
                 }
               </b></td>
             </tr>
             <tr>
               <td className="greyBackground"><b>Average</b></td>
               <td className="pointsColumn greyBackground"><b>
-                { Players
-                  .map(Players => Players.points)
-                  .reduce((a, b) => a + b) / Players.length
+                { this.state.players
+                  .map(player => player.points)
+                  .reduce((a, b) => a + b, 0) / this.state.players.length
                 }
               </b></td>
             </tr>
