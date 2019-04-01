@@ -24,6 +24,10 @@
             "state": "Texas"
         },
         "phone": "409-502-9644"
+    },
+    "openingHours": {
+        "open": 7,
+        "close": 21
     }
 },
 {
@@ -36,6 +40,10 @@
             "state": "Michigan"
         },
         "phone": "313-310-5426"
+    },
+    "openingHours": {
+        "open": 7,
+        "close": 21
     }
 },
 {
@@ -48,6 +56,10 @@
             "state": "California"
         },
         "phone": "714-872-9003"
+    },
+    "openingHours": {
+        "open": 7,
+        "close": 21
     }
 },
 {
@@ -60,6 +72,10 @@
             "state": "Florida"
         },
         "phone": "407-220-2940"
+    },
+    "openingHours": {
+        "open": 7,
+        "close": 21
     }
 },
 {
@@ -72,6 +88,10 @@
             "state": "Arizona"
         },
         "phone": "928-707-2826"
+    },
+    "openingHours": {
+        "open": 7,
+        "close": 21
     }
 },
 {
@@ -84,6 +104,10 @@
             "state": "Nevada"
         },
         "phone": "702-784-5325"
+    },
+    "openingHours": {
+        "open": 7,
+        "close": 21
     }
 },
 {
@@ -96,6 +120,10 @@
             "state": "Oregon"
         },
         "phone": "503-617-6041"
+    },
+    "openingHours": {
+        "open": 7,
+        "close": 21
     }
 },
 {
@@ -108,6 +136,10 @@
             "state": "Illinois"
         },
         "phone": "312-433-3291"
+    },
+    "openingHours": {
+        "open": 7,
+        "close": 21
     }
 },
 {
@@ -120,6 +152,10 @@
             "state": "Utah"
         },
         "phone": "801-988-2624"
+    },
+    "openingHours": {
+        "open": 7,
+        "close": 21
     }
 },
 {
@@ -132,6 +168,10 @@
             "state": "Alabama"
         },
         "phone": "251-968-2977"
+    },
+    "openingHours": {
+        "open": 7,
+        "close": 21
     }
 },
 {
@@ -144,6 +184,10 @@
             "state": "Arkansas"
         },
         "phone": "870-663-2168"
+    },
+    "openingHours": {
+        "open": 7,
+        "close": 21
     }
 },
 {
@@ -156,6 +200,10 @@
             "state": "Arkansas"
         },
         "phone": "870-663-2168"
+    },
+    "openingHours": {
+        "open": 7,
+        "close": 21
     }
 },
 {
@@ -168,6 +216,10 @@
             "state": "Colorado"
         },
         "phone": "303-568-6401"
+    },
+    "openingHours": {
+        "open": 7,
+        "close": 21
     }
 },
 {
@@ -180,6 +232,10 @@
             "state": "Connecticut"
         },
         "phone": "860-231-3163"
+    },
+    "openingHours": {
+        "open": 7,
+        "close": 21
     }
 },
 {
@@ -192,6 +248,10 @@
             "state": "Georgia"
         },
         "phone": "678-709-7359"
+    },
+    "openingHours": {
+        "open": 7,
+        "close": 21
     }
 },
 {
@@ -204,6 +264,10 @@
             "state": "West Virginia"
         },
         "phone": "304-832-0776"
+    },
+    "openingHours": {
+        "open": 7,
+        "close": 21
     }
 },
 {
@@ -216,6 +280,10 @@
             "state": "Oklahoma"
         },
         "phone": "918-266-9625"
+    },
+    "openingHours": {
+        "open": 7,
+        "close": 21
     }
 },
 {
@@ -228,6 +296,10 @@
             "state": "New Mexico"
         },
         "phone": "505-735-0865"
+    },
+    "openingHours": {
+        "open": 7,
+        "close": 21
     }
 },
 {
@@ -240,5 +312,9 @@
             "state": "Wisconsin"
         },
         "phone": "715-265-8754"
+    },
+    "openingHours": {
+        "open": 7,
+        "close": 21
     }
 }]
