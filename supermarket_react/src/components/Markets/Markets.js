@@ -1,11 +1,11 @@
 import React from 'react'
-import MarketsList from './MarketsList'
+import MarketsList from '../UserPanel/MarketsList'
 
 class Markets extends React.Component {
     render(){
         return(
             <>
-                <MarketsList />
+                <h1>Markets</h1>
             </>
         )
     }

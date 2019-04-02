@@ -39,12 +39,11 @@ class UserMarket extends React.Component {
     }
     render() { 
         return (
-            <>
-                {/* {console.log(this.state) */}
-                    <h1 className="user__container__right__header">Your market</h1>
-                <div className="user__container__right__market">
+            <div className="user__container__left__bottom">
+                <h1 className="user__container__left__header">Your market</h1>
+                <div className="user__container__left__market">
                     <img src="/img/react_market.jpg" alt="market_photo"/>
-                    <div className="user__container__right__market__marketdata">
+                    <div className="user__container__left__market__marketdata">
                         <h3>Supermarket React</h3>
                         <h4>{this.state.contactInfo.address.street}</h4>
                         <h4>
@@ -60,7 +59,7 @@ class UserMarket extends React.Component {
                         </h4>
                     </div>
                 </div>
-            </>
+            </div>
         )
     }
 }
