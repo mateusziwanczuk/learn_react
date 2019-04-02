@@ -46,23 +46,28 @@ class MarketsList extends React.Component {
     const { expanded } = this.state;
 
     return (
-      <div className={classes.root}>
-        {this.state.markets.map(market => {
-          return(
-            <ExpansionPanel key={market.id} expanded={expanded === `panel${market.id}`} onChange={this.handleChange(`panel${market.id}`)}>
-              <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography className={classes.heading}>{market.contactInfo.address.city}</Typography>
-                <Typography className={classes.secondaryHeading}>{market.contactInfo.address.state}</Typography>
-              </ExpansionPanelSummary>
-              <ExpansionPanelDetails>
-                <Typography>
-                  {market.contactInfo.address.street}<br />
-                  {market.contactInfo.address.zipcode} {market.contactInfo.address.city} {market.contactInfo.address.state}
-                </Typography>
-              </ExpansionPanelDetails>
-            </ExpansionPanel>
-            )})}
-      </div>
+      <>
+        <div className={classes.root}>
+          <h1 className="user__container__header">Find your market:</h1>
+          <div className="markets__list__container">
+            {this.state.markets.map(market => {
+              return(
+                <ExpansionPanel key={market.id} expanded={expanded === `panel${market.id}`} onChange={this.handleChange(`panel${market.id}`)}>
+                  <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                    <Typography className={classes.heading}>{market.contactInfo.address.city}</Typography>
+                    <Typography className={classes.secondaryHeading}>{market.contactInfo.address.state}</Typography>
+                  </ExpansionPanelSummary>
+                  <ExpansionPanelDetails>
+                    <Typography>
+                      {market.contactInfo.address.street}<br />
+                      {market.contactInfo.address.zipcode} {market.contactInfo.address.city} {market.contactInfo.address.state}
+                    </Typography>
+                  </ExpansionPanelDetails>
+                </ExpansionPanel>
+                )})}
+          </div>
+        </div>
+      </>
     );
   }
 }

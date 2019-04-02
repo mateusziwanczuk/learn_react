@@ -11,7 +11,7 @@ class SayHello extends React.Component {
             .then(value => this.setState({name: value.name}))
     }
     render (){
-        return <h1 className="user__container__left__header">Hello {this.state.name}!</h1>
+        return <h1 className="user__container__header">Hello {this.state.name}!</h1>
     }      
 }
 

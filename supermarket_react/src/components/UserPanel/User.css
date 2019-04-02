@@ -15,10 +15,8 @@
     justify-content: center;
 }
 
-.user__container__left__header {
-    /* background: rgba(255, 255, 255, 0.555); */
+.user__container__header {
     background: #9dcece;
-    /* color: #0cadad; */
     color: white;
     border-radius: 25px;
     font-size: 2rem;
@@ -107,3 +105,13 @@
             margin-left: 3rem;
             line-height: 150%;
         }
+
+.user__container__right {}
+
+        .markets__list__container {
+            height: 75vh;
+            overflow: auto;
+            margin-top: 5%;
+        }
+
+        ::-webkit-scrollbar {background: #ffffff;}

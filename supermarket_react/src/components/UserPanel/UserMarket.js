@@ -40,7 +40,7 @@ class UserMarket extends React.Component {
     render() { 
         return (
             <div className="user__container__left__bottom">
-                <h1 className="user__container__left__header">Your market</h1>
+                <h1 className="user__container__header">Your market</h1>
                 <div className="user__container__left__market">
                     <img src="/img/react_market.jpg" alt="market_photo"/>
                     <div className="user__container__left__market__marketdata">
