@@ -47,22 +47,21 @@ class MarketsList extends React.Component {
 
     return (
       <div className={classes.root}>
-        {console.log(this.state.markets)}
         {this.state.markets.map(market => {
           return(
-        <ExpansionPanel key={market.id} expanded={expanded === `panel${market.id}`} onChange={this.handleChange(`panel${market.id}`)}>
-          <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography className={classes.heading}>{market.contactInfo.address.city}</Typography>
-            <Typography className={classes.secondaryHeading}>{market.contactInfo.address.state}</Typography>
-          </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
-            <Typography>
-              {market.contactInfo.address.street}<br />
-              {market.contactInfo.address.zipcode} {market.contactInfo.address.city} {market.contactInfo.address.state}
-            </Typography>
-          </ExpansionPanelDetails>
-        </ExpansionPanel>
-        )})}
+            <ExpansionPanel key={market.id} expanded={expanded === `panel${market.id}`} onChange={this.handleChange(`panel${market.id}`)}>
+              <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                <Typography className={classes.heading}>{market.contactInfo.address.city}</Typography>
+                <Typography className={classes.secondaryHeading}>{market.contactInfo.address.state}</Typography>
+              </ExpansionPanelSummary>
+              <ExpansionPanelDetails>
+                <Typography>
+                  {market.contactInfo.address.street}<br />
+                  {market.contactInfo.address.zipcode} {market.contactInfo.address.city} {market.contactInfo.address.state}
+                </Typography>
+              </ExpansionPanelDetails>
+            </ExpansionPanel>
+            )})}
       </div>
     );
   }

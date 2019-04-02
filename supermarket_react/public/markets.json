@@ -194,12 +194,12 @@
     "id": 13,
     "contactInfo": {
         "address": {
-            "street": "4653 Sunset Drive",
-            "zipcode": "71601",
-            "city" : "Pine Bluff",
-            "state": "Arkansas"
+            "street": "1013 Drummond Street",
+            "zipcode": "07102",
+            "city" : "Newark",
+            "state": "New Jersey"
         },
-        "phone": "870-663-2168"
+        "phone": "973-206-1244"
     },
     "openingHours": {
         "open": 7,
