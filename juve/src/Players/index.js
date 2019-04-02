@@ -21,7 +21,6 @@ class Players extends React.Component {
                 players: props.players
             };
         }
-        return null;
     }
     render() {
         return (
@@ -58,9 +57,10 @@ class Players extends React.Component {
                         <tr>
                             <td className="greyBackground"><b>Average</b></td>
                             <td className="pointsColumn greyBackground"><b>
-                                {this.state.players
+                                {
+                                    this.state.players
                                     .map(player => player.points)
-                                    .reduce((a, b) => a + b, 0) / this.state.players.length
+                                    .reduce((a, b) => a + b, 0) / this.state.players.length || 0
                                 }
                             </b></td>
                         </tr>
