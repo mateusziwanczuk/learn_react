@@ -1,5 +1,4 @@
 import React from 'react'
-import MarketsList from '../UserPanel/MarketsList'
 
 class Markets extends React.Component {
     render(){
