@@ -53,27 +53,29 @@ const NavLink = styled(Link)`
 const Icon = props => <BaseIcon size={36} icon={props.icon} />;
 
 class MainNav extends React.Component {
-	state = { selectedPath: "home" };
+	state = { selectedPath: "" };
 
 	onItemSelection = arg => {
-		this.setState({ selectedPath: arg.path });
+		this.setState({ selectedPath: window.location.pathname });
 	};
 
 	render() {
 		return (
 			<Navigation>
 				<SideNav
-					defaultSelectedPath="home"
+					defaultSelectedPath={window.location.pathname}
 					theme={theme}
 					onItemSelection={this.onItemSelection}
 				>
-					<NavLink to="/">
-						<div style={{margin: "30px 0 10px", textAlign: "center"}}>
-							<h1 style={{fontSize: "4rem", fontFamily: 'Courgette'}}>React</h1>
-							<h5 style={{fontSize: "0.7rem", fontFamily: 'Roboto', letterSpacing: "0.6rem", marginTop: "10px"}}>SUPERMARKET</h5>
-						</div>
-					</NavLink>
-					<Nav id="home">
+					<Nav id="/home" style={{background: "#0cadad"}}>
+						<NavLink to="/">
+							<div style={{margin: "30px 0 10px", textAlign: "center"}}>
+								<h1 style={{fontSize: "4rem", fontFamily: 'Courgette'}}>React</h1>
+								<h5 style={{fontSize: "0.7rem", fontFamily: 'Roboto', letterSpacing: "0.6rem", marginTop: "10px"}}>SUPERMARKET</h5>
+							</div>
+						</NavLink>
+					</Nav>
+					<Nav id="/home">
 						<NavLink to="/home">
 							<IconCnt>
 								<Icon icon={home} />
@@ -81,7 +83,7 @@ class MainNav extends React.Component {
 							<Text>Home</Text>
 						</NavLink>
 					</Nav>
-					<Nav id="userPanel">
+					<Nav id="/user-panel">
 						<NavLink to="/user-panel">
 							<IconCnt>
 								<Icon icon={user} />
@@ -89,7 +91,7 @@ class MainNav extends React.Component {
 							<Text>User Panel</Text>
 						</NavLink>
 					</Nav>
-					<Nav id="markets">
+					<Nav id="/markets">
 						<NavLink to="/markets">
 							<IconCnt>
 								<Icon icon={shop} />
@@ -97,7 +99,7 @@ class MainNav extends React.Component {
 							<Text>Markets</Text>
 						</NavLink>
 					</Nav>
-					<Nav id="basket">
+					<Nav id="/basket">
 						<NavLink to="/basket">
 							<IconCnt>
 								<Icon icon={shoppingCart} />
@@ -105,7 +107,7 @@ class MainNav extends React.Component {
 							<Text>Basket</Text>
 						</NavLink>
 					</Nav>
-					<Nav id="summary">
+					<Nav id="/summary-order">
 						<NavLink to="/summary-order">
 							<IconCnt>
 								<Icon icon={creditCardAlt} />
@@ -115,7 +117,7 @@ class MainNav extends React.Component {
 					</Nav>
 
 
-					<Nav id="support">
+					<Nav id="/support">
 						<NavLink to="/support">
 							<IconCnt>
 								<Icon icon={bubbles3} />
@@ -123,7 +125,7 @@ class MainNav extends React.Component {
 							<Text>Support</Text>
 						</NavLink>
 					</Nav>
-					<Nav id="logout">
+					<Nav id="/logout">
 						<NavLink to="/logout"> 
 							<IconCnt>
 								<Icon icon={userTimes} />
