@@ -1,8 +1,16 @@
+h3, h4 {
+    font-weight: normal;
+}
+
+h2 {
+    color: #008a8a;
+}
+
 .user__container {
     background-size: cover;
     background-position: center;
     display: flex;
-    font-family: 'Arial';
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-size: 1.5rem;
     height: 100%;
     width: 100%;
@@ -96,22 +104,30 @@
         }
 
         .user__container__left__market img {
-            width: 50%;
-            height: 100%;
             border-radius: 25px;
+            height: 100%;
+            width: 50%;
         }
 
         .user__container__left__market__marketdata {
-            margin-left: 3rem;
             line-height: 150%;
+            margin-left: 3rem;
+        }
+
+        .user__container__left__market__marketdata h3 {
+            color: #008a8a;
+            font-weight: bold;
         }
 
 .user__container__right {}
 
         .markets__list__container {
-            height: 75vh;
-            overflow: auto;
+            border: 1px solid lightgrey;
+            border-radius: 25px 0px 0px 25px;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 1.4rem;
+            height: 72vh;
+            line-height: 150%;
             margin-top: 5%;
+            overflow: auto;
         }
-
-        ::-webkit-scrollbar {background: #ffffff;}

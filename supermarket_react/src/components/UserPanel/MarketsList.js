@@ -58,10 +58,8 @@ class MarketsList extends React.Component {
                     <Typography className={classes.secondaryHeading}>{market.contactInfo.address.state}</Typography>
                   </ExpansionPanelSummary>
                   <ExpansionPanelDetails>
-                    <Typography>
                       {market.contactInfo.address.street}<br />
                       {market.contactInfo.address.zipcode} {market.contactInfo.address.city} {market.contactInfo.address.state}
-                    </Typography>
                   </ExpansionPanelDetails>
                 </ExpansionPanel>
                 )})}
