@@ -6,7 +6,6 @@ import { home } from "react-icons-kit/ikons/home";
 import { user } from "react-icons-kit/ikons/user";
 import { shop } from "react-icons-kit/ikons/shop";
 import { shoppingCart } from "react-icons-kit/fa/shoppingCart";
-import { creditCardAlt } from "react-icons-kit/fa/creditCardAlt";
 import { bubbles3 } from 'react-icons-kit/icomoon/bubbles3';
 import { userTimes } from 'react-icons-kit/fa/userTimes';
 
@@ -91,32 +90,22 @@ class MainNav extends React.Component {
 							<Text>User Panel</Text>
 						</NavLink>
 					</Nav>
-					<Nav id="/markets">
-						<NavLink to="/markets">
+					<Nav id="/market">
+						<NavLink to="/market">
 							<IconCnt>
 								<Icon icon={shop} />
 							</IconCnt>
-							<Text>Markets</Text>
-						</NavLink>
-					</Nav>
-					<Nav id="/basket">
-						<NavLink to="/basket">
-							<IconCnt>
-								<Icon icon={shoppingCart} />
-							</IconCnt>
-							<Text>Basket</Text>
+							<Text>Market</Text>
 						</NavLink>
 					</Nav>
 					<Nav id="/summary-order">
 						<NavLink to="/summary-order">
 							<IconCnt>
-								<Icon icon={creditCardAlt} />
+								<Icon icon={shoppingCart} />
 							</IconCnt>
 							<Text>Summary the order</Text>
 						</NavLink>
 					</Nav>
-
-
 					<Nav id="/support">
 						<NavLink to="/support">
 							<IconCnt>

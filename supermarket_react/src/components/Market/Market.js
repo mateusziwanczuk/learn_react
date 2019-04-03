@@ -200,7 +200,7 @@ const styles = theme => ({
   },
 });
 
-class Basket extends React.Component {
+class Market extends React.Component {
   state = {
     order: 'asc',
     orderBy: 'calories',
@@ -348,8 +348,8 @@ class Basket extends React.Component {
   }
 }
 
-Basket.propTypes = {
+Market.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Basket);
+export default withStyles(styles)(Market);
