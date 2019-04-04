@@ -19,6 +19,8 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
 import { lighten } from '@material-ui/core/styles/colorManipulator';
 
+import MarketMenuList from './MarketMenuList'
+
 let counter = 0;
 function createData(name, quantity, price) {
   counter += 1;
@@ -153,9 +155,7 @@ let EnhancedTableToolbar = props => {
             {numSelected} selected
           </Typography>
         ) : (
-          <Typography variant="h6" id="tableTitle">
-            Add products to your basket:
-          </Typography>
+          <MarketMenuList />
         )}
       </div>
       <div className={classes.spacer} />
