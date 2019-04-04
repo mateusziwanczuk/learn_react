@@ -154,7 +154,7 @@ let EnhancedTableToolbar = props => {
           </Typography>
         ) : (
           <Typography variant="h6" id="tableTitle">
-            Add products to your basket:
+            Your basket:
           </Typography>
         )}
       </div>
@@ -198,25 +198,13 @@ const styles = theme => ({
   // },
 });
 
-class Market extends React.Component {
+class Basket extends React.Component {
   state = {
     order: 'asc',
     orderBy: 'quantity',
     selected: [],
     data: [
-      createData('Milk', 1, 1.00),
-      createData('Bread', 1, 1.00),
-      createData('Beer', 4, 1.50),
-      createData('Yoghurt', 4, 1.00),
-      createData('Chocolate', 2, 1.50),
-      createData('Pork fillet', 2, 2.00),
-      createData('Ice cream sandwich', 4, 0.80),
-      createData('Potato', 1, 2.00),
-      createData('Tomato', 1, 1.00),
-      createData('Onion', 1, 0.50),
-      createData('Pizza', 1, 4.00),
-      createData('Salt', 1, 1.00),
-      createData('Newspaper', 1, 1.00),
+    //   createData('Cupcake', 305, 3.7),
     ],
     page: 0,
     rowsPerPage: 5,
@@ -344,8 +332,8 @@ class Market extends React.Component {
   }
 }
 
-Market.propTypes = {
+Basket.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Market);
+export default withStyles(styles)(Basket);

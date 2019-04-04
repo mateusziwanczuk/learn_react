@@ -6,6 +6,7 @@ import { home } from "react-icons-kit/ikons/home";
 import { user } from "react-icons-kit/ikons/user";
 import { shop } from "react-icons-kit/ikons/shop";
 import { shoppingCart } from "react-icons-kit/fa/shoppingCart";
+import { clipboard } from 'react-icons-kit/icomoon/clipboard'
 import { bubbles3 } from 'react-icons-kit/icomoon/bubbles3';
 import { userTimes } from 'react-icons-kit/fa/userTimes';
 
@@ -98,10 +99,18 @@ class MainNav extends React.Component {
 							<Text>Market</Text>
 						</NavLink>
 					</Nav>
+					<Nav id="/basket">
+						<NavLink to="/basket">
+							<IconCnt>
+								<Icon icon={shoppingCart} />
+							</IconCnt>
+							<Text>Basket</Text>
+						</NavLink>
+					</Nav>
 					<Nav id="/summary-order">
 						<NavLink to="/summary-order">
 							<IconCnt>
-								<Icon icon={shoppingCart} />
+								<Icon icon={clipboard} />
 							</IconCnt>
 							<Text>Summary the order</Text>
 						</NavLink>

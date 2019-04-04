@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Home from "../Home/Home"
 import UserPanel from "../UserPanel/UserPanel"
 import Market from "../Market/Market"
+import Basket from "../Basket/Basket"
 import Summary from "../Summary/Summary"
 
 const Content = styled.div`
@@ -20,6 +21,7 @@ const MainContent = () => {
 			<Route path="/home" component={ Home } />
 			<Route path="/user-panel" component={ UserPanel } />
 			<Route path="/market" component={ Market } />
+			<Route path="/basket" component={ Basket } />
 			<Route path="/summary-order" component={ Summary } />
 		</Content>
 	);
