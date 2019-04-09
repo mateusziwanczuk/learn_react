@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import Nav from "./navigation/Navigation.js";
+import Content from "./Content.js";
 import firebase from 'firebase'
-import './App.css';
 
 const config = {
   apiKey: "AIzaSyDBsLbZsyfcgRKu9yT5Wj0wez9_G2n600E",
@@ -13,9 +14,14 @@ const config = {
 firebase.initializeApp(config);
 
 class App extends Component {
-  render() {
-    return <h1>Hello</h1>
-  }
+    render() {
+        return (
+            <div>
+                <Nav />
+                <Content />
+            </div>
+        );
+    }
 }
 
 export default App;
