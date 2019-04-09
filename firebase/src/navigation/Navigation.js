@@ -27,11 +27,14 @@ function Navigation(props) {
                     <NavLink to='/dashboard'>
                         <Button color="inherit">Dashboard</Button>
                     </NavLink>
-                    <NavLink to='/arteon'>
-                        <Button color="inherit">Arteon</Button>
+                    <NavLink to='/counter'>
+                        <Button color="inherit">Counter</Button>
                     </NavLink>
-                    <NavLink to='/touareg'>
-                        <Button color="inherit">Touareg</Button>
+                    <NavLink to='/counterlive'>
+                        <Button color="inherit">Counter Live</Button>
+                    </NavLink>
+                    <NavLink to='/persons'>
+                        <Button color="inherit">Persons</Button>
                     </NavLink>
                     <NavLink to='/chat'>
                         <Button color="inherit">Live Chat</Button>
