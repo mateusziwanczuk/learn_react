@@ -4,6 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
+import Auth from '../Auth/Auth';
 
 const styles = () => ({});
 
@@ -39,13 +40,15 @@ class Counter extends Component {
         const {classes} = this.props;
         return (
             <div className="container">
-                <h1>Counter: <span>{this.state.counter}</span></h1>
-                <Fab color="primary" aria-label="Add" className={classes.fab} onClick={ this.increase }>
-                    <AddIcon/>
-                </Fab>
-                <Fab color="secondary" aria-label="Remove" className={classes.fab} onClick={ this.decrease }>
-                    <RemoveIcon/>
-                </Fab>
+                <Auth>
+                    <h1>Counter: <span>{this.state.counter}</span></h1>
+                    <Fab color="primary" aria-label="Add" className={classes.fab} onClick={ this.increase }>
+                        <AddIcon/>
+                    </Fab>
+                    <Fab color="secondary" aria-label="Remove" className={classes.fab} onClick={ this.decrease }>
+                        <RemoveIcon/>
+                    </Fab>
+                </Auth>
             </div>
         );
     }
