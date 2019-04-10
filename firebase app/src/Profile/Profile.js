@@ -16,7 +16,7 @@ class Profile extends Component {
                 <Auth>
                     <h1>Profile</h1>
                     <div>
-                        <img alt="avatar" src={AvatarSrc}/>
+                        <img alt="avatar" src={AvatarSrc} />
                         <div>
                             <input
                                 accept="image/*"
@@ -27,10 +27,10 @@ class Profile extends Component {
                                 type="file"
                             />
                             <label htmlFor="raised-button-file">
-                                <Fab color="primary" variant="raised" component="span">
+                                <Fab size="small" color="primary" component="span">
                                     <ImageIcon />
                                 </Fab>
-                                <Fab color="primary" aria-label="Edit" className={classes.fab}>
+                                <Fab size="small" color="primary" aria-label="Edit" className={classes.fab}>
                                     <SaveIcon />
                                 </Fab>
                             </label>
