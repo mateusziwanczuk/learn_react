@@ -30,7 +30,7 @@ class Counter extends Component {
             .then(() => { this.getData() })
     }
 
-    decrement = () => {
+    decrease = () => {
         firebase.database().ref('counter').set(this.state.counter - 1)
             .then(() => { this.getData() })
     }
@@ -43,7 +43,7 @@ class Counter extends Component {
                 <Fab color="primary" aria-label="Add" className={classes.fab} onClick={ this.increase }>
                     <AddIcon/>
                 </Fab>
-                <Fab color="secondary" aria-label="Remove" className={classes.fab} onClick={ this.decrement }>
+                <Fab color="secondary" aria-label="Remove" className={classes.fab} onClick={ this.decrease }>
                     <RemoveIcon/>
                 </Fab>
             </div>
