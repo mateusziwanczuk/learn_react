@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Auth from '../Auth/Auth';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import firebase from 'firebase';
@@ -82,20 +83,22 @@ class ChatLive extends Component {
 
         return (
         <div className="container">
-            <h2><b>Live Chat</b></h2>
-            {this.state.messages.slice(-10).map((message) => {
-                return <Paper key={message.id} className={classes.root} elevation={1}>
-                    <span style={{color: 'grey'}}>{message.email} :</span>
-                    <span>{message.text}</span>
-                </Paper>
-            })}
-            <form className="input-message" onSubmit={this.handleSubmit}>
-                <TextField
-                    value={this.state.currentMessage}
-                    onChange={this.handleChange}
-                />
-                <Button variant='contained' color='primary' type='submit'>SEND</Button>
-            </form>
+            <Auth>
+                <h2><b>Live Chat</b></h2>
+                {this.state.messages.slice(-10).map((message) => {
+                    return <Paper key={message.id} className={classes.root} elevation={1}>
+                        <span style={{color: 'grey'}}>{message.email} :</span>
+                        <span>{message.text}</span>
+                    </Paper>
+                })}
+                <form className="input-message" onSubmit={this.handleSubmit}>
+                    <TextField
+                        value={this.state.currentMessage}
+                        onChange={this.handleChange}
+                    />
+                    <Button variant='contained' color='primary' type='submit'>SEND</Button>
+                </form>
+            </Auth>
         </div>
         )
     }
