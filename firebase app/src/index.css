@@ -10,8 +10,46 @@ body {
 }
 
   .container img {
-    width: 150px;
+    width: 200px;
+    margin-bottom: 1rem;
   }
+
+  .container span {
+    margin: 0 0.5rem;
+  }
+
+  .container button {
+    margin: 0 0.5rem;
+  }
+
+  .container div {
+    margin: 1rem auto;
+    padding: 1rem;
+    width: 60%;
+    font-size: 1rem;
+  }
+
+  .input-message {
+    display: flex;
+    width: 60%;
+    margin: 1rem auto;
+  }
+
+    .input-message div {
+      width: 90%;
+    }
+
+    .input-message input{
+      width: 100%;
+      box-shadow: 0 0 20px lightgrey;
+      padding: 1rem;
+    }
+
+    .input-message button{
+      height: 50px;
+      margin-top: 70px;
+      width: 150px;
+    }
 
 .float-right {
   margin-right: 1rem;

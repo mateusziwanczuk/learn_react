@@ -39,6 +39,9 @@ class Navigation extends React.Component {
                         <NavLink to='/counter-live'>
                             <Button>Live Counter</Button>
                         </NavLink>
+                        <NavLink to='/chat-live'>
+                            <Button>Live Chat</Button>
+                        </NavLink>
                         <div className="float-right">
                             {
                                 this.state.user ? (
