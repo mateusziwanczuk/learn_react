@@ -1,0 +1,286 @@
+[{
+    "id": 1,
+    "department": "dairy_products",
+    "title": "Milk Milky Land, 0,5l, 3,2%",
+    "price": 2,
+    "image": "/img/image.jpg" 
+},
+{
+    "id": 2,
+    "department": "dairy_products",
+    "title": "Milk Milky Land, 0,5l, 2%",
+    "price": 2,
+    "image": "/img/image.jpg" 
+},
+{
+    "id": 3,
+    "department": "dairy_products",
+    "title": "Cheese Milky Land, Smoked Natural Gouda, 300g",
+    "price": 3.59,
+    "image": "/img/image.jpg" 
+},
+{
+    "id": 4,
+    "department": "dairy_products",
+    "title": "Eggs FarmLand, Large White Grade AA, 12 Count",
+    "price": 3.29,
+    "image": "/img/image.jpg" 
+},
+{
+    "id": 5,
+    "department": "dairy_products",
+    "title": "Butter FarmLand, Natural Salted, 250g",
+    "price": 3.29,
+    "image": "/img/image.jpg" 
+},
+{
+    "id": 6,
+    "department": "meals",
+    "title": "Pizza Italia, Pepperoni, Frozen 12in",
+    "price": 4.29,
+    "image": "/img/image.jpg" 
+},
+{
+    "id": 7,
+    "department": "meals",
+    "title": "Pizza Italia, Salami, Frozen 12in",
+    "price": 4.29,
+    "image": "/img/image.jpg" 
+},
+{
+    "id": 8,
+    "department": "meals",
+    "title": "Pizza Italia, Chicken Curry, Frozen 12in",
+    "price": 4.59,
+    "image": "/img/image.jpg" 
+},
+{
+    "id": 9,
+    "department": "fruits",
+    "title": "Honeycrisp Apple, (price per item)",
+    "price": 0.59,
+    "image": "/img/image.jpg" 
+},
+{
+    "id": 10,
+    "department": "fruits",
+    "title": "Gala Apple (price per item)",
+    "price": 0.49,
+    "image": "/img/image.jpg" 
+},
+{
+    "id": 11,
+    "department": "fruits",
+    "title": "Rainier Apple (price per item)",
+    "price": 0.89,
+    "image": "/img/image.jpg" 
+},
+{
+    "id": 12,
+    "department": "fruits",
+    "title": "Avocado from Mexico (price per item)",
+    "price": 1.59,
+    "image": "/img/image.jpg" 
+},
+{
+    "id": 13,
+    "department": "fruits",
+    "title": "Yellow Bananas, 5-7ct",
+    "price": 1.99,
+    "image": "/img/image.jpg" 
+},
+{
+    "id": 14,
+    "department": "fruits",
+    "title": "Blueberries, approx. 11oz",
+    "price": 5,
+    "image": "/img/image.jpg" 
+},
+{
+    "id": 15,
+    "department": "fruits",
+    "title": "Strawberries, approx 16oz",
+    "price": 7.99,
+    "image": "/img/image.jpg" 
+},
+{
+    "id": 16,
+    "department": "fruits",
+    "title": "Orange, 4lb bag",
+    "price": 4,
+    "image": "/img/image.jpg" 
+},
+{
+    "id": 17,
+    "department": "fruits",
+    "title": "Green Seedless Grapes",
+    "price": 4.29,
+    "image": "/img/image.jpg" 
+},
+{
+    "id": 18,
+    "department": "fruits",
+    "title": "Black Seedless Grapes",
+    "price": 4.49,
+    "image": "/img/image.jpg" 
+},
+{
+    "id": 19,
+    "department": "vegetables",
+    "title": "Organic Bruccoli, approx. 1lb bunch",
+    "price": 3.99,
+    "image": "/img/image.jpg" 
+},
+{
+    "id": 20,
+    "department": "vegetables",
+    "title": "Organic Carrots",
+    "price": 1.69,
+    "image": "/img/image.jpg" 
+},
+{
+    "id": 21,
+    "department": "vegetables",
+    "title": "Green Cucumber",
+    "price": 0.9
+},
+{
+    "id": 22,
+    "department": "vegetables",
+    "title": "Yellow Corn",
+    "price": 0.99,
+    "image": "/img/image.jpg" 
+},
+{
+    "id": 23,
+    "department": "vegetables",
+    "title": "Organic Lettuce, head",
+    "price": 3.0,
+    "image": "/img/image.jpg" 
+},
+{
+    "id": 24,
+    "department": "vegetables",
+    "title": "Organic White Mushrooms, Packaged approx. 8oz",
+    "price": 3.39,
+    "image": "/img/image.jpg" 
+},
+{
+    "id": 25,
+    "department": "vegetables",
+    "title": "Red Pepper",
+    "price": 1,
+    "image": "/img/image.jpg" 
+},
+{
+    "id": 26,
+    "department": "vegetables",
+    "title": "Organic Yellow Onion, Medium",
+    "price": 0.69,
+    "image": "/img/image.jpg" 
+},
+{
+    "id": 27,
+    "department": "vegetables",
+    "title": "Organic Gold Potatoes, 1lb",
+    "price": 1.39,
+    "image": "/img/image.jpg" 
+},
+{
+    "id": 28,
+    "department": "vegetables",
+    "title": "Sweet Grape Tomatoes, approx. 32oz.",
+    "price": 7.99,
+    "image": "/img/image.jpg" 
+},
+{
+    "id": 29,
+    "department": "meat",
+    "title": "Chicken Organic Boneless, Skinless Beasts, 500g",
+    "price": 6.5,
+    "image": "/img/image.jpg" 
+},
+{
+    "id": 30,
+    "department": "meat",
+    "title": "Turkey Burgers, Fresh, 400g",
+    "price": 6.6,
+    "image": "/img/image.jpg" 
+},
+{
+    "id": 31,
+    "department": "meat",
+    "title": "Filet Mignon, 500g",
+    "price": 16.99,
+    "image": "/img/image.jpg" 
+},
+{
+    "id": 32,
+    "department": "bakery",
+    "title": "French Baguette 16in",
+    "price": 1.59,
+    "image": "/img/image.jpg" 
+},
+{
+    "id": 33,
+    "department": "bakery",
+    "title": "Round Baked Potato Knishes",
+    "price": 2.29,
+    "image": "/img/image.jpg" 
+},
+{
+    "id": 34,
+    "department": "household",
+    "title": "Paper Towels A-Size, 8ct",
+    "price": 14.69,
+    "image": "/img/image.jpg" 
+},
+{
+    "id": 35,
+    "department": "household",
+    "title": "Kleenex Hand Towels, 60ct",
+    "price": 4.49,
+    "image": "/img/image.jpg" 
+},
+{
+    "id": 36,
+    "department": "household",
+    "title": "Liquid Laundry Detergent, April Fresh",
+    "price": 15.99,
+    "image": "/img/image.jpg" 
+},
+{
+    "id": 37,
+    "department": "household",
+    "title": "Glass Spray Cleaner, 23fl oz",
+    "price": 4.19,
+    "image": "/img/image.jpg" 
+},
+{
+    "id": 38,
+    "department": "alcohol",
+    "title": "Beer alc. 6%, 6ct 300ml",
+    "price": 9.99,
+    "image": "/img/image.jpg" 
+},
+{
+    "id": 39,
+    "department": "alcohol",
+    "title": "Beer alc. 5%, 6ct 300ml",
+    "price": 8.99,
+    "image": "/img/image.jpg" 
+},
+{
+    "id": 40,
+    "department": "alcohol",
+    "title": "Red Wine Chateau Bordeaux, 750ml",
+    "price": 15.79,
+    "image": "/img/image.jpg" 
+},
+{
+    "id": 41,
+    "department": "alcohol",
+    "title": "White Wine Chateau Bordeaux, 750ml",
+    "price": 12.79,
+    "image": "/img/image.jpg" 
+}]
