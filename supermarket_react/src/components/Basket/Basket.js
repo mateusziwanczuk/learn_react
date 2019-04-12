@@ -19,11 +19,11 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
 import { lighten } from '@material-ui/core/styles/colorManipulator';
 
-let counter = 0;
-function createData(name, quantity, price) {
-  counter += 1;
-  return { id: counter, name, quantity, price };
-}
+// let counter = 0;
+// function createData(name, quantity, price) {
+//   counter += 1;
+//   return { id: counter, name, quantity, price };
+// }
 
 function desc(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
