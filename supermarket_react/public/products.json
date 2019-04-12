@@ -3,284 +3,285 @@
     "department": "Dairy_products",
     "title": "Milk Milky Land, 0,5l, 3,2%",
     "price": 2,
-    "image": "/img/image.jpg" 
+    "image": "/img/nophoto.png" 
 },
 {
     "id": 2,
     "department": "Dairy_products",
     "title": "Milk Milky Land, 0,5l, 2%",
     "price": 2,
-    "image": "/img/image.jpg" 
+    "image": "/img/nophoto.png" 
 },
 {
     "id": 3,
     "department": "Dairy_products",
     "title": "Cheese Milky Land, Smoked Natural Gouda, 300g",
     "price": 3.59,
-    "image": "/img/image.jpg" 
+    "image": "/img/nophoto.png" 
 },
 {
     "id": 4,
     "department": "Dairy_products",
     "title": "Eggs FarmLand, Large White Grade AA, 12 Count",
     "price": 3.29,
-    "image": "/img/image.jpg" 
+    "image": "/img/eggs.png" 
 },
 {
     "id": 5,
     "department": "Dairy_products",
     "title": "Butter FarmLand, Natural Salted, 250g",
     "price": 3.29,
-    "image": "/img/image.jpg" 
+    "image": "/img/butter.png" 
 },
 {
     "id": 6,
     "department": "Meals",
     "title": "Pizza Italia, Pepperoni, Frozen 12in",
     "price": 4.29,
-    "image": "/img/image.jpg" 
+    "image": "/img/pizza.png" 
 },
 {
     "id": 7,
     "department": "Meals",
     "title": "Pizza Italia, Salami, Frozen 12in",
     "price": 4.29,
-    "image": "/img/image.jpg" 
+    "image": "/img/pizza.png" 
 },
 {
     "id": 8,
     "department": "Meals",
     "title": "Pizza Italia, Chicken Curry, Frozen 12in",
     "price": 4.59,
-    "image": "/img/image.jpg" 
+    "image": "/img/pizza.png" 
 },
 {
     "id": 9,
     "department": "Fruits",
     "title": "Honeycrisp Apple, (price per item)",
     "price": 0.59,
-    "image": "/img/image.jpg" 
+    "image": "/img/honeycrisp.jpg" 
 },
 {
     "id": 10,
     "department": "Fruits",
     "title": "Gala Apple (price per item)",
     "price": 0.49,
-    "image": "/img/image.jpg" 
+    "image": "/img/gala.jpg" 
 },
 {
     "id": 11,
     "department": "Fruits",
     "title": "Rainier Apple (price per item)",
     "price": 0.89,
-    "image": "/img/image.jpg" 
+    "image": "/img/honeycrisp.jpg" 
 },
 {
     "id": 12,
     "department": "Fruits",
     "title": "Avocado from Mexico (price per item)",
     "price": 1.59,
-    "image": "/img/image.jpg" 
+    "image": "/img/avocado.png" 
 },
 {
     "id": 13,
     "department": "Fruits",
     "title": "Yellow Bananas, 5-7ct",
     "price": 1.99,
-    "image": "/img/image.jpg" 
+    "image": "/img/banana.jpg" 
 },
 {
     "id": 14,
     "department": "Fruits",
     "title": "Blueberries, approx. 11oz",
     "price": 5,
-    "image": "/img/image.jpg" 
+    "image": "/img/blueberries.jpg" 
 },
 {
     "id": 15,
     "department": "Fruits",
     "title": "Strawberries, approx 16oz",
     "price": 7.99,
-    "image": "/img/image.jpg" 
+    "image": "/img/strawberries.jpg" 
 },
 {
     "id": 16,
     "department": "Fruits",
     "title": "Orange, 4lb bag",
     "price": 4,
-    "image": "/img/image.jpg" 
+    "image": "/img/orange.png" 
 },
 {
     "id": 17,
     "department": "Fruits",
     "title": "Green Seedless Grapes",
     "price": 4.29,
-    "image": "/img/image.jpg" 
+    "image": "/img/grapesgreen.png" 
 },
 {
     "id": 18,
     "department": "Fruits",
     "title": "Black Seedless Grapes",
     "price": 4.49,
-    "image": "/img/image.jpg" 
+    "image": "/img/grapesblack.png" 
 },
 {
     "id": 19,
     "department": "Vegetables",
     "title": "Organic Bruccoli, approx. 1lb bunch",
     "price": 3.99,
-    "image": "/img/image.jpg" 
+    "image": "/img/bruccoli.jpg" 
 },
 {
     "id": 20,
     "department": "Vegetables",
     "title": "Organic Carrots",
     "price": 1.69,
-    "image": "/img/image.jpg" 
+    "image": "/img/carrots.jpg" 
 },
 {
     "id": 21,
     "department": "Vegetables",
     "title": "Green Cucumber",
-    "price": 0.9
+    "price": 0.9,
+    "image": "/img/cucumber.png" 
 },
 {
     "id": 22,
     "department": "Vegetables",
     "title": "Yellow Corn",
     "price": 0.99,
-    "image": "/img/image.jpg" 
+    "image": "/img/corn.png" 
 },
 {
     "id": 23,
     "department": "Vegetables",
     "title": "Organic Lettuce, head",
     "price": 3.0,
-    "image": "/img/image.jpg" 
+    "image": "/img/lettuce.jpg" 
 },
 {
     "id": 24,
     "department": "Vegetables",
     "title": "Organic White Mushrooms, Packaged approx. 8oz",
     "price": 3.39,
-    "image": "/img/image.jpg" 
+    "image": "/img/mushrooms.jpg" 
 },
 {
     "id": 25,
     "department": "Vegetables",
     "title": "Red Pepper",
     "price": 1,
-    "image": "/img/image.jpg" 
+    "image": "/img/pepper.jpg" 
 },
 {
     "id": 26,
     "department": "Vegetables",
     "title": "Organic Yellow Onion, Medium",
     "price": 0.69,
-    "image": "/img/image.jpg" 
+    "image": "/img/onion.JPG" 
 },
 {
     "id": 27,
     "department": "Vegetables",
     "title": "Organic Gold Potatoes, 1lb",
     "price": 1.39,
-    "image": "/img/image.jpg" 
+    "image": "/img/potatoes.png" 
 },
 {
     "id": 28,
     "department": "Vegetables",
     "title": "Sweet Grape Tomatoes, approx. 32oz.",
     "price": 7.99,
-    "image": "/img/image.jpg" 
+    "image": "/img/tomato.png" 
 },
 {
     "id": 29,
     "department": "Meat",
     "title": "Chicken Organic Boneless, Skinless Beasts, 500g",
     "price": 6.5,
-    "image": "/img/image.jpg" 
+    "image": "/img/nophoto.png" 
 },
 {
     "id": 30,
     "department": "Meat",
     "title": "Turkey Burgers, Fresh, 400g",
     "price": 6.6,
-    "image": "/img/image.jpg" 
+    "image": "/img/nophoto.png" 
 },
 {
     "id": 31,
     "department": "Meat",
     "title": "Filet Mignon, 500g",
     "price": 16.99,
-    "image": "/img/image.jpg" 
+    "image": "/img/nophoto.png" 
 },
 {
     "id": 32,
     "department": "Bakery",
     "title": "French Baguette 16in",
     "price": 1.59,
-    "image": "/img/image.jpg" 
+    "image": "/img/baguette.jpg" 
 },
 {
     "id": 33,
     "department": "Bakery",
     "title": "Round Baked Potato Knishes",
     "price": 2.29,
-    "image": "/img/image.jpg" 
+    "image": "/img/nophoto.png" 
 },
 {
     "id": 34,
     "department": "Household",
     "title": "Paper Towels A-Size, 8ct",
     "price": 14.69,
-    "image": "/img/image.jpg" 
+    "image": "/img/nophoto.png" 
 },
 {
     "id": 35,
     "department": "Household",
     "title": "Kleenex Hand Towels, 60ct",
     "price": 4.49,
-    "image": "/img/image.jpg" 
+    "image": "/img/nophoto.png" 
 },
 {
     "id": 36,
     "department": "Household",
     "title": "Liquid Laundry Detergent, April Fresh",
     "price": 15.99,
-    "image": "/img/image.jpg" 
+    "image": "/img/detergent.png" 
 },
 {
     "id": 37,
     "department": "Household",
     "title": "Glass Spray Cleaner, 23fl oz",
     "price": 4.19,
-    "image": "/img/image.jpg" 
+    "image": "/img/nophoto.png" 
 },
 {
     "id": 38,
     "department": "Alcohol",
     "title": "Beer alc. 6%, 6ct 300ml",
     "price": 9.99,
-    "image": "/img/image.jpg" 
+    "image": "/img/nophoto.png" 
 },
 {
     "id": 39,
     "department": "Alcohol",
     "title": "Beer alc. 5%, 6ct 300ml",
     "price": 8.99,
-    "image": "/img/image.jpg" 
+    "image": "/img/beer.jpg" 
 },
 {
     "id": 40,
     "department": "Alcohol",
     "title": "Red Wine Chateau Bordeaux, 750ml",
     "price": 15.79,
-    "image": "/img/image.jpg" 
+    "image": "/img/redwine.jpg" 
 },
 {
     "id": 41,
     "department": "Alcohol",
     "title": "White Wine Chateau Bordeaux, 750ml",
     "price": 12.79,
-    "image": "/img/image.jpg" 
+    "image": "/img/whitewine.png" 
 }]

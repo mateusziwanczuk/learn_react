@@ -14,8 +14,9 @@
     max-height: 80vh;
     width: 70vw;
     background: rgba(255, 255, 255, 0.555);
-    justify-content: center;
-    
+    border: 1px solid lightgrey;
+    border-right: none;
+    border-radius: 25px 0 0 25px;
 }
 
 .market__product {
@@ -25,4 +26,11 @@
     width: 200px;
     height: 200px;
     margin: 20px;
+    text-align: center;
+}
+
+.market__product img {
+    width: 130px;
+    height: 130px;
+    padding: 10px;
 }

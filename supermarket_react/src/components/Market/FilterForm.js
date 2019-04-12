@@ -22,7 +22,7 @@ class FilterForm extends React.Component {
             <form>
                 <input type="text" value={this.state.value} onChange={this.onInputChange} />
                 <select onChange={this.onSelectChange}>
-                    <option value="">Department</option>
+                    <option value="">All departments</option>
                     {this.props.departments
                         .sort()
                         .map(department => (
