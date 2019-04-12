@@ -24,10 +24,10 @@ class FilterForm extends React.Component {
                 <select onChange={this.onSelectChange}>
                     <option value="">Department</option>
                     {this.props.departments
+                        .sort()
                         .map(department => (
                         <option key={department} value={department}>{department.replace(/_/, ' ')}</option>
                     ))}
-                    {console.log(this.props.departments)}
                 </select>
             </form>
         )

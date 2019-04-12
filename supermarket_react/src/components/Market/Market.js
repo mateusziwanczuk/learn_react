@@ -1,5 +1,6 @@
 import React from 'react';
 import FilterForm from './FilterForm';
+import MarketProducts from './MarketProducts';
 
 class Market extends React.Component {
   state = {
@@ -26,7 +27,7 @@ class Market extends React.Component {
     return this.state.products
       .filter(
         product => {
-          const productNameLowerCased = product.name.toLowerCase();
+          const productNameLowerCased = product.title.toLowerCase();
           const textFilterLowerCased = this.state.filter.text.toLowerCase();
           const productDepartment = product.department;
           const departmentFilter = this.state.filter.department;
@@ -36,10 +37,9 @@ class Market extends React.Component {
   render (){
     return (
       <>
-        {console.log(this.state)}
         <h1>Products</h1>
         <FilterForm departments={this.state.departments} onFilterChange={filter => this.setState({filter})} />
-        {/* <MarketProducts products={this.getData()} /> */}
+        <MarketProducts products={this.getData()} />
       </>
     )
   }
