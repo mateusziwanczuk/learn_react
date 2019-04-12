@@ -20,7 +20,7 @@ class FilterForm extends React.Component {
     render(){
         return (
             <form>
-                <input type="text" value={this.state.value} onChange={this.onInputChange} />
+                <input placeholder="Find product" type="text" value={this.state.value} onChange={this.onInputChange} />
                 <select onChange={this.onSelectChange}>
                     <option value="">All departments</option>
                     {this.props.departments

@@ -15,14 +15,14 @@
 {
     "id": 3,
     "department": "Dairy_products",
-    "title": "Cheese Milky Land, Smoked Natural Gouda, 300g",
+    "title": "Cheese Milky Land, Natural Gouda, 300g",
     "price": 3.59,
     "image": "/img/nophoto.png" 
 },
 {
     "id": 4,
     "department": "Dairy_products",
-    "title": "Eggs FarmLand, Large White Grade AA, 12 Count",
+    "title": "Eggs FarmLand, Large White Grade AA",
     "price": 3.29,
     "image": "/img/eggs.png" 
 },

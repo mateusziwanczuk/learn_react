@@ -1,36 +1,77 @@
 .market__container {
-    margin-top: 2%;
+    margin-top: 6vh;
 }
 
 .market__container__filter {
-    text-align: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+}
+
+.market__container__filter h1 {
+    background: rgba(255, 255, 255, 0.555);
+    border: 1px solid lightgrey;
+    border-radius: 25px;
+    color: #6cb8b8;    
+    font-size: 4rem;
+    letter-spacing: 1.3rem;
+    margin-right: 5rem;
+    padding: 1rem 3rem;
+    text-transform: uppercase;
+}
+
+.market__container__filter input {
+    border: 1px solid #9dcece;
+    border-radius: 15px 0 0 15px;
+    margin-top: 1.2rem;
+    padding: 1.5rem;
+}
+
+.market__container__filter select {
+    background: #66c7c7;
+    border: none;
+    border-radius: 0 15px 15px 0 ;
+    color: white;
+    font-weight: bold;
+    margin-left: 0.5rem;
+    padding: 1.5rem;
 }
 
 .market__product__container {
-    margin: 2% auto;
-    display: flex;
-    flex-wrap: wrap;
-    overflow: auto;
-    max-height: 80vh;
-    width: 70vw;
     background: rgba(255, 255, 255, 0.555);
     border: 1px solid lightgrey;
     border-right: none;
     border-radius: 25px 0 0 25px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5vh auto;
+    max-height: 70vh;
+    overflow: auto;
+    width: 60vw;
 }
 
 .market__product {
     background: white;
     border: 1px solid lightgrey;
     border-radius: 25px;
-    width: 200px;
-    height: 200px;
-    margin: 20px;
+    height: 220px;
+    margin: 15px;
     text-align: center;
+    width: 170px;
 }
 
 .market__product img {
-    width: 130px;
-    height: 130px;
+    height: 100px;
     padding: 10px;
+    width: 100px;
+}
+
+.market__product p {
+    font-size: 1.3rem;
+    margin: 0 1.2rem;
+}
+
+.market__product svg {
+    color: #0cadad;
+    padding-bottom: 1rem;
 }
