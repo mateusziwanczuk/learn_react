@@ -1,0 +1,28 @@
+.market__container {
+    margin-top: 2%;
+}
+
+.market__container__filter {
+    text-align: center;
+}
+
+.market__product__container {
+    margin: 2% auto;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    max-height: 80vh;
+    width: 70vw;
+    background: rgba(255, 255, 255, 0.555);
+    justify-content: center;
+    
+}
+
+.market__product {
+    background: white;
+    border: 1px solid lightgrey;
+    border-radius: 25px;
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+}

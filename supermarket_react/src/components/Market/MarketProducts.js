@@ -1,9 +1,29 @@
 import React from 'react'
+import './Market.css'
 
 const MarketProducts = props => {
     const {products} = props;
     return(
-        <table>
+        <div className="market__product__container">
+            {products.map(product => (
+            <div className="market__product">
+                <img src='' alt='product photo' />
+                <div className="market__product__info">
+                    <p>{product.title}</p>
+                    <p>Price: {product.price} USD</p>
+                </div>
+            </div>
+
+            ))}
+
+
+        </div>
+    )
+}
+
+export default MarketProducts; 
+
+        {/* <table>
             <thead>
                 <tr>
                     <th>Product</th>
@@ -18,8 +38,4 @@ const MarketProducts = props => {
                     </tr>
                 ))}
             </tbody>
-        </table>
-    )
-}
-
-export default MarketProducts; 
+        </table> */}

@@ -36,11 +36,13 @@ class Market extends React.Component {
   }
   render (){
     return (
-      <>
-        <h1>Products</h1>
-        <FilterForm departments={this.state.departments} onFilterChange={filter => this.setState({filter})} />
+      <div className="market__container">
+        <div className="market__container__filter">
+          <h1 market__container>Products</h1>
+          <FilterForm departments={this.state.departments} onFilterChange={filter => this.setState({filter})} />
+        </div>
         <MarketProducts products={this.getData()} />
-      </>
+      </div>
     )
   }
 }
