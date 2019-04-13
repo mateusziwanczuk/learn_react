@@ -1,9 +1,6 @@
-import { ADD_TODO, CHANGE_STATUS, DELETE_TODO, CHANGE_INPUT_VALUE } from '../actions/todo'
+import { todoStatuses, ADD_TODO, CHANGE_STATUS, DELETE_TODO, CHANGE_INPUT_VALUE } from '../actions/todo'
 
-const todoStatuses = {
-    COMPLETED: 'completed',
-    NOT_COMPLETED: 'not-completed'
-}
+
 
 const initialState = {
     inputValue: '',

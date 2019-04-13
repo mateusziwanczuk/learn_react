@@ -19,3 +19,8 @@ export const deleteTodo = (amount) => ({
 export const changeInputValue = () => ({
     type: CHANGE_INPUT_VALUE
 })
+
+export const todoStatuses = {
+    COMPLETED: 'completed',
+    NOT_COMPLETED: 'not-completed'
+}
