@@ -15,8 +15,8 @@ const MarketProducts = props => {
     return(
         <div className="market__product__container">
             {products.map(product => (
-            <div className="market__product">
-                <img src={product.image} alt='product photo' />
+            <div className="market__product" key={product.title}>
+                <img src={product.image} alt={product.image} />
                 <div className="market__product__info">
                     <IconCnt>
 						<Icon icon={shoppingCart} />
