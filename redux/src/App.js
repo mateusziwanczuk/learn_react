@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { increment, decrement } from "./actions/counter";
+import {connect} from 'react-redux'
 import logo from './logo.svg';
 import './App.css';
 
@@ -8,9 +10,13 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
+
           <p>
-            Edit <code>src/App.js</code> and save to reload.
+            <button onClick={this.props.decreaseCounter}>-</button>
+            <span> COUNTER: {this.props.counter} </span>
+            <button onClick={this.props.increaseCounter}>+</button>
           </p>
+
           <a
             className="App-link"
             href="https://reactjs.org"
@@ -24,5 +30,13 @@ class App extends Component {
     );
   }
 }
+const mapStateToProps = (state) => ({
+  counter: state.counter
+})
 
-export default App;
+const mapDispatchToProps = (dispatch) => ({
+  increaseCounter: () => dispatch(increment()),
+  decreaseCounter: () => dispatch(decrement())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
