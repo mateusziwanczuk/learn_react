@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { increment, decrement, amountChange,changeByAmount } from "./actions/counter";
+import { addTodo, changeStatus, deleteTodo, changeInputValue } from "./actions/todo"; 
 import { changeRotation } from "./actions/animation";
 import { connect } from 'react-redux'
 import logo from './logo.svg';
@@ -22,13 +23,18 @@ class App extends Component {
             <button className="button" onClick={this.props.changeRotation}>?</button>
           </p>
         </header>
+        <div className="todo_app">
+          <p>
+            <input type='text'></input><button>ADD TODO</button>
+          </p>
+        </div>
       </div>
     );
   }
 }
 const mapStateToProps = (state) => ({
   counter: state.counter.count,
-  animationRotation: state.animation.direction
+  animationRotation: state.animation.direction,
 })
 
 const mapDispatchToProps = (dispatch) => ({

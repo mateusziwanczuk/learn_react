@@ -25,6 +25,10 @@
   color: white;
 }
 
+.App-header input {
+  width: 15%;
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -60,4 +64,8 @@
   background: rgb(38, 179, 226);
   border: none;
   color: white;
+}
+
+.todo_app {
+  height: 100vh;
 }
