@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { increment, decrement } from "./actions/counter";
+import { increment, decrement, amountChange,changeByAmount } from "./actions/counter";
 import { changeRotation } from "./actions/animation";
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import logo from './logo.svg';
 import './App.css';
 
@@ -12,10 +12,14 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className={`App-logo ${this.props.animationRotation === 'left' ? 'App-logo--left' : '' }`} alt="logo" />
           <p>
-            <button onClick={this.props.decreaseCounter}>-</button>
+            <button className="button" onClick={this.props.decreaseCounter}>-</button>
             <span> COUNTER: {this.props.counter} </span>
-            <button onClick={this.props.increaseCounter}>+</button>
-            <button onClick={this.props.changeRotation}>?</button>
+            <button className="button"onClick={this.props.increaseCounter}>+</button>
+            <br/><br/>
+            <input type='text' onChange={(e) => this.props.amountChange(e.target.value)} />
+            <button className="add_button" onClick={this.props.changeByAmount}>ADD</button>
+            <br/><br/>
+            <button className="button" onClick={this.props.changeRotation}>?</button>
           </p>
         </header>
       </div>
@@ -23,14 +27,16 @@ class App extends Component {
   }
 }
 const mapStateToProps = (state) => ({
-  counter: state.counter,
+  counter: state.counter.count,
   animationRotation: state.animation.direction
 })
 
 const mapDispatchToProps = (dispatch) => ({
   increaseCounter: () => dispatch(increment()),
   decreaseCounter: () => dispatch(decrement()),
-  changeRotation: () => dispatch(changeRotation())
+  changeRotation: () => dispatch(changeRotation()),
+  amountChange: (value) => dispatch(amountChange(value)),
+  changeByAmount: () => dispatch(changeByAmount())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
