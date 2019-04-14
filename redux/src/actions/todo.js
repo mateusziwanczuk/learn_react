@@ -3,10 +3,11 @@ export const CHANGE_STATUS = 'CHANGE_STATUS'
 export const DELETE_TODO = 'DELETE_TODO'
 export const CHANGE_INPUT_VALUE = 'CHANGE_INPUT_VALUE'
 
-export const addTodo = (text, id) => ({
+let lastTodoId = 0;
+
+export const addTodo = () => ({
     type: ADD_TODO,
-    text,
-    id
+    id: lastTodoId++
 })
 
 export const changeStatus = (status, id) => ({

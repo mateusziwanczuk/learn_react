@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { increment, decrement, amountChange,changeByAmount } from "./actions/counter";
-import { addTodo, changeStatus, deleteTodo, changeInputValue } from "./actions/todo"; 
 import { changeRotation } from "./actions/animation";
 import { connect } from 'react-redux';
 import TodoList from './TodoList'

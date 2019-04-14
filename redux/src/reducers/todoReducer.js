@@ -12,9 +12,10 @@ export default function todoReducer(state = initialState, action) {
             ...state,
             todos: [...state.todos, {
                 id: action.id,
-                text: action.text,
+                text: state.inputValue,
                 status: todoStatuses.NOT_COMPLETED
-            }]
+            }],
+            inputValue: ''
         }
        }
        case CHANGE_STATUS: {
