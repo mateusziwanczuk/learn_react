@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux' 
-import todoActions from './actions/todo'
+import todoActions, { todoStatuses } from './actions/todo'
+import TodoItem from './TodoItem'
 import "./App.css";
 
 class TodoList extends React.Component {
@@ -8,13 +9,21 @@ class TodoList extends React.Component {
     return (
       <div className="todo_app">
       <br/><br/>
-      <input type='text' value={this.props.inputValue} onChange={e => this.props.changeInputValue(e.target.value)}></input>
+      <input type='text' value={this.props.inputValue} onChange={e => this.props.changeInputValue(e.target.value)}/>
+      <button onClick={this.props.addTodo }>ADD TODO</button>
         {this.props.todos.map(todo => {
             return (
-                <div>{todo.text}</div>
+                <TodoItem 
+                    key = {todo.id}
+                    isCompleted={ todo.status === todoStatuses.COMPLETED }
+                    id = { todo.id }
+                    onComplete = { (id) => this.props.changeTodoStatus(todoStatuses.COMPLETED, id) }
+                    onDelete = { (id) => this.props.deleteTodo(id) }
+                    >
+                    <span>{todo.text} </span>
+                </TodoItem>
             )
         })}
-        <button onClick={this.props.addTodo }>ADD TODO</button>
       </div>
     );
   }

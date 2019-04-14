@@ -3,12 +3,12 @@ export const CHANGE_STATUS = 'CHANGE_STATUS'
 export const DELETE_TODO = 'DELETE_TODO'
 export const CHANGE_INPUT_VALUE = 'CHANGE_INPUT_VALUE'
 
-let lastTodoId = 0;
-
-export const addTodo = () => ({
-    type: ADD_TODO,
-    id: lastTodoId++
-})
+export const addTodo = () => {
+    return {
+        type: ADD_TODO,
+        id: Date.now()
+    }
+}
 
 export const changeStatus = (status, id) => ({
     type: CHANGE_STATUS,
@@ -16,7 +16,7 @@ export const changeStatus = (status, id) => ({
     id
 })
 
-export const deleteTodo = (text, id) => ({
+export const deleteTodo = (id) => ({
     type: DELETE_TODO,
     id
 })
