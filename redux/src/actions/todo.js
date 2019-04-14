@@ -12,18 +12,30 @@ export const CHANGE_INPUT_VALUE = 'CHANGE_INPUT_VALUE'
 //     }
 // }
 
-const addTodo = () => {
-const todo = {
-    type: ADD_TODO,
-    id: Date.now()
+const addTodo = () => (dispatch, getState) => {
+    const id = Date.now()
+    const todoAction = {
+        type: ADD_TODO,
+        id
+    }
+    const lsTodo = {
+        id,
+        text: getState().todo.inputValue,
+        status: todoStatuses.NOT_COMPLETED
     }
     return localForage.getItem('todos').then(todos => {
         if (todos) {
-            localForage.setItem('todos', [...todos, todo])
+            localForage.setItem('todos', [...todos, lsTodo])
+                .then(() => {
+                    dispatch(todoAction)
+                })
         } else {
-            localForage.setItem('todos', [todo])
+            localForage.setItem('todos', [lsTodo])
+                .then(() => {
+                    dispatch(todoAction)
+                })
         }
-        return todo
+        dispatch(todoAction)
     })
 }
 
