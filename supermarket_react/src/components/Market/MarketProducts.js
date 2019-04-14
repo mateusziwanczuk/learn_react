@@ -11,8 +11,8 @@ const IconCnt = styled.div`
 `;
 
 const MarketProducts = props => {
-    const {products} = props;
-
+    const {products, setItemToLS} = props;
+    
     return(
         <div className="market__product__container">
             {products.map(product => (
@@ -20,22 +20,7 @@ const MarketProducts = props => {
                 <img src={product.image} alt={product.image} />
                 <div className="market__product__info">
                     { }
-                    <IconCnt onClick={ () => {
-                        if (localStorage.getItem("basketProducts") !== null) {
-                            let basketProducts = JSON.parse(localStorage.getItem("basketProducts"));
-                            if (!basketProducts.some(item => item.id === product.id)) {
-                                basketProducts.push(product);
-                                alert('Product added to your basket!');
-                                localStorage.setItem("basketProducts", JSON.stringify(basketProducts));
-                            } else {
-                                alert('You can change quantity in Basket bookmark.')
-                            }
-                        } else {
-                            const basketProducts = [product];
-                            alert('Product added to your basket!');
-                            localStorage.setItem("basketProducts", JSON.stringify(basketProducts));
-                        }
-                    }}>
+                    <IconCnt onClick={ () => setItemToLS(product) }>
 						<Icon icon={shoppingCart} />
 					</IconCnt>
                     <p>{product.title}</p>

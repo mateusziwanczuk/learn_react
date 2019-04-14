@@ -34,6 +34,24 @@ class Market extends React.Component {
           return productNameLowerCased.includes(textFilterLowerCased) && productDepartment.includes(departmentFilter);
         })
   }
+
+  setItemToLocalStorage = product => {
+      if (localStorage.getItem("basketProducts") !== null) {
+        let basketProducts = JSON.parse(localStorage.getItem("basketProducts"));
+        if (!basketProducts.some(item => item.id === product.id)) {
+            basketProducts.push(product);
+            alert('Product added to your basket!');
+            localStorage.setItem("basketProducts", JSON.stringify(basketProducts));
+        } else {
+            alert('You can change quantity in Basket bookmark.')
+        }
+    } else {
+        const basketProducts = [product];
+        alert('Product added to your basket!');
+        localStorage.setItem("basketProducts", JSON.stringify(basketProducts));
+    }
+  }
+
   render (){
     return (
       <div className="market__container">
@@ -41,7 +59,7 @@ class Market extends React.Component {
           <h1>Products</h1>
           <FilterForm departments={this.state.departments} onFilterChange={filter => this.setState({filter})} />
         </div>
-        <MarketProducts products={this.getData()} />
+        <MarketProducts setItemToLS={this.setItemToLocalStorage} products={this.getData()} />
       </div>
     )
   }
