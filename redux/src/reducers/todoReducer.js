@@ -1,14 +1,8 @@
 import { todoStatuses, ADD_TODO, CHANGE_STATUS, DELETE_TODO, CHANGE_INPUT_VALUE } from '../actions/todo'
 
-
-
 const initialState = {
     inputValue: '',
-    todos: [{
-        id: null, 
-        text: '', 
-        status: todoStatuses.NOT_COMPLETED
-    }]
+    todos: []
 }
 
 export default function todoReducer(state = initialState, action) {
@@ -40,7 +34,8 @@ export default function todoReducer(state = initialState, action) {
        }
        case CHANGE_INPUT_VALUE: { /* props: text */
         return {
-            ...state
+            ...state,
+            inputValue: action.value
         }
        }
         default: {
