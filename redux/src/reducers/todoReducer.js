@@ -28,7 +28,6 @@ export default function todoReducer(state = initialState, action) {
         }
        }
        case DELETE_TODO: { 
-           console.log(action)
         return {
             ...state,
             todos: state.todos.filter(todo => todo.id !== action.id)

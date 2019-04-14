@@ -20,6 +20,7 @@ class TodoList extends React.Component {
                     onComplete = { (id) => this.props.changeTodoStatus(todoStatuses.COMPLETED, id) }
                     onDelete = { (id) => this.props.deleteTodo(id) }
                     >
+                    <br/>
                     <span>{todo.text} </span>
                 </TodoItem>
             )
