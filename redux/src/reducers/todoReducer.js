@@ -1,4 +1,4 @@
-import { todoStatuses, ADD_TODO, CHANGE_STATUS, DELETE_TODO, CHANGE_INPUT_VALUE } from '../actions/todo'
+import { todoStatuses, FETCH_TODOS, ADD_TODO, CHANGE_STATUS, DELETE_TODO, CHANGE_INPUT_VALUE } from '../actions/todo'
 
 const initialState = {
     inputValue: '',
@@ -38,6 +38,12 @@ export default function todoReducer(state = initialState, action) {
             ...state,
             inputValue: action.value
         }
+       }
+       case FETCH_TODOS: {
+           return {
+                ...state,
+                todos: action.todos 
+           }
        }
         default: {
             return state

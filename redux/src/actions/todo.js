@@ -4,13 +4,7 @@ export const ADD_TODO = 'ADD_TODO'
 export const CHANGE_STATUS = 'CHANGE_STATUS'
 export const DELETE_TODO = 'DELETE_TODO'
 export const CHANGE_INPUT_VALUE = 'CHANGE_INPUT_VALUE'
-
-// export const addTodo = () => {
-//     return {
-//         type: ADD_TODO,
-//         id: Date.now()
-//     }
-// }
+export const FETCH_TODOS = 'FETCH_TODOS'
 
 const addTodo = () => (dispatch, getState) => {
     const id = Date.now()
@@ -35,9 +29,17 @@ const addTodo = () => (dispatch, getState) => {
                     dispatch(todoAction)
                 })
         }
-        dispatch(todoAction)
     })
 }
+
+export const fetchTodos = () => dispatch => {
+    return localForage.getItem('todos').then(todos => {
+        dispatch({
+            type: 'FETCH_TODO',
+            todos: todos || []
+        })
+    })
+} 
 
 export const changeStatus = (status, id) => ({
     type: CHANGE_STATUS,
@@ -61,7 +63,7 @@ export const todoStatuses = {
 }
 
 const todoActions = {
-    addTodo, deleteTodo, changeStatus, changeInputValue
+    addTodo, deleteTodo, changeStatus, changeInputValue, fetchTodos
 }
 export default todoActions
 
