@@ -41,16 +41,37 @@ export const fetchTodos = () => dispatch => {
     })
 } 
 
-export const changeStatus = (status, id) => ({
-    type: CHANGE_STATUS,
-    status,
-    id
-})
+export const deleteTodo = id => dispatch => {
+    return localForage.getItem('todos')
+        .then(todos => {
+            if(todos) {
+                const filteredTodos = todos.filter(todo => todo.id !== id)
+                localForage.setItem('todos', filteredTodos)
+                    .then(() => {
+                        dispatch({
+                            type: DELETE_TODO,
+                            id
+                        })
+                    })
+            }
+        })
+}
 
-export const deleteTodo = (id) => ({
-    type: DELETE_TODO,
-    id
-})
+export const changeStatus = (status, id) => (dispatch, getState) => {
+    return localForage.getItem('todos')
+        .then(todos => {
+            const mappedTodos = todos.map(todo => todo.id === id 
+                ? {...todo, status}
+                : todo)
+            localForage.setItem('todos', mappedTodos)
+                .then(() => {
+                    dispatch({ 
+                        type: CHANGE_STATUS,
+                        status
+                    })
+                })
+        })
+}
 
 export const changeInputValue = (value) => ({
     type: CHANGE_INPUT_VALUE,
