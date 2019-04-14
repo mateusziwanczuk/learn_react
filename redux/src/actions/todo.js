@@ -35,7 +35,7 @@ const addTodo = () => (dispatch, getState) => {
 export const fetchTodos = () => dispatch => {
     return localForage.getItem('todos').then(todos => {
         dispatch({
-            type: 'FETCH_TODO',
+            type: FETCH_TODOS,
             todos: todos || []
         })
     })
@@ -67,6 +67,7 @@ export const changeStatus = (status, id) => (dispatch, getState) => {
                 .then(() => {
                     dispatch({ 
                         type: CHANGE_STATUS,
+                        id,
                         status
                     })
                 })
