@@ -8,9 +8,11 @@ class Basket extends React.Component {
 		redirect: false
 	};
 
-	totalPrice = this.state.basketProducts
+	totalPrice = localStorage.getItem("basketProducts") !== null ? 
+		this.state.basketProducts
 		.map(basketProduct => basketProduct.price)
 		.reduce((a,b) => a + b)
+		: null
 
 	setRedirect = () => {
 		this.setState({
@@ -44,17 +46,20 @@ class Basket extends React.Component {
 											<tr key={product.title}>
 													<td>{product.title}</td>
 													<td className="table__center__content">1</td>
-													<td className="table__center__content">$ {product.price}</td>
+													<td className="table__center__content">$ {product.price.toFixed(2)}</td>
 											</tr>
 										);
-									}) : null
+									}) 
+									: <br/>
 								}
 						</tbody>
 						<tfoot>
 							<tr>
 								<td>Total price</td>
 								<td></td>
-								<td className="table__center__content">$ {this.totalPrice.toFixed(2)}</td>
+								{localStorage.getItem("basketProducts") !== null 
+								? <td className="table__center__content">$ {this.totalPrice.toFixed(2)}</td>
+								: <td className="table__center__content">$ 0.00</td>}
 							</tr>
 						</tfoot>
 					</table>
