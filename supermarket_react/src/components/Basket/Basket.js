@@ -1,13 +1,29 @@
 import React from 'react';
-import './Basket.css'
+import { Redirect } from 'react-router-dom';
+import './Basket.css';
 
 class Basket extends React.Component {
   state = {
-		basketProducts: JSON.parse(localStorage.getItem('basketProducts'))
+		basketProducts: JSON.parse(localStorage.getItem('basketProducts')),
+		redirect: false
 	};
+
 	totalPrice = this.state.basketProducts
 		.map(basketProduct => basketProduct.price)
 		.reduce((a,b) => a + b)
+
+	setRedirect = () => {
+		this.setState({
+			redirect: true
+		})
+	}
+
+	renderRedirect = () => {
+    if (this.state.redirect) {
+      return <Redirect to='/summary-order' />
+    }
+	}
+	
   render() { 
     return ( 
 			<div className="basket__container">
@@ -42,6 +58,11 @@ class Basket extends React.Component {
 							</tr>
 						</tfoot>
 					</table>
+				</div>
+				<div className="basket__container__button">
+					{this.renderRedirect()}
+					<span onClick={this.setRedirect}>Summary the order</span>
+					{/* Component menu color doesn't change when redirected. */}
 				</div>
       </div>
     );

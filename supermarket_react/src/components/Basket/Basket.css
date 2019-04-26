@@ -41,6 +41,7 @@
     }
 
     .basket__container_table tfoot {
+        color: #6cb8b8;
         font-size: 1.6rem;
         font-weight: bold;
     }
@@ -48,3 +49,24 @@
     .table__center__content {
         text-align: center;
     }
+
+.basket__container__button {
+    text-align: center;
+    width: 100%;
+}
+
+    .basket__container__button span {
+        background: #66c7c7;
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+        font-size: 1.7rem;
+        font-weight: bold;
+        letter-spacing: 0.2rem;
+        padding: 1rem 2rem;
+    }
+
+    .basket__container__button span:hover {
+        background: #6cb8b8;
+    }
+

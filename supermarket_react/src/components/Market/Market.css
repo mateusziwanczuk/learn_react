@@ -73,5 +73,6 @@
 
 .market__product svg {
     color: #0cadad;
+    cursor: pointer;
     padding-bottom: 1rem;
 }
