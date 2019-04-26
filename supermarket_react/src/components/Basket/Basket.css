@@ -5,42 +5,55 @@
     color: #6cb8b8;    
     font-size: 4rem;
     letter-spacing: 1.3rem;
-    margin: 6vh auto auto 6vw;
+    margin: 6vh auto auto 20vw;
     padding: 1rem 3rem;
     text-align: center;
     text-transform: uppercase;
     width: 22rem;
 }
 
-.basket__container_table {
+
+.basket__container__table {
     background: rgba(255, 255, 255, 0.555);
     border: 1px solid #d3d3d3;
-    border-radius: 25px;
+    border-radius: 25px 0 0 25px;
     font-size: 1.3rem;
     margin: 4vh auto;
     max-height: 60vh;
     overflow: auto;
     padding: 1rem 3rem;
-    width: 70%;
+    width: 60%;
 }
 
-.basket__container_table table {
+
+.basket__container__table table {
     margin: 0 auto;
     width: 100%;
 }
 
-    .basket__container_table th {
+    .basket__container__table th {
         color: #6cb8b8;
         font-size: 2rem;
         letter-spacing: 0.5rem;
         padding: 1rem;    
+    }    
+    
+    .basket__delete__product {
+        color: #6cb8b8;
+        cursor: pointer;
+        margin-right: 2rem;
     }
 
-    .basket__container_table td {
+    .basket__container__table td {
         padding: 1rem;
     }
 
-    .basket__container_table tfoot {
+    .basket__container__table input {
+        text-align: center;
+        width: 3rem;
+    }
+
+    .basket__container__table tfoot {
         color: #6cb8b8;
         font-size: 1.6rem;
         font-weight: bold;
@@ -49,6 +62,15 @@
     .table__center__content {
         text-align: center;
     }
+
+    .basket__product__quantity__button {
+        color: #6cb8b8;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 1.3rem;
+        margin: 0 1.3rem;
+    }
+
 
 .basket__container__button {
     text-align: center;

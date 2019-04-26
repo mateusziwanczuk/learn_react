@@ -25,12 +25,12 @@ class Basket extends React.Component {
       return <Redirect to='/summary-order' />
     }
 	}
-	
+
   render() { 
     return ( 
 			<div className="basket__container">
 				<h1>Basket</h1>
-				<div className="basket__container_table">
+				<div className="basket__container__table">
 					<table>
 						<thead>
 							<tr>
@@ -44,8 +44,15 @@ class Basket extends React.Component {
 									this.state.basketProducts.map((product, i) => {
 										return (
 											<tr key={product.title}>
-													<td>{product.title}</td>
-													<td className="table__center__content">1</td>
+													<td>
+														<span className="basket__delete__product">✘</span>
+														{product.title}
+													</td>
+													<td className="table__center__content">
+														<span className="basket__product__quantity__button" id="product.id">-</span>
+														<span className="basket__product__quantity" id="product.id">1</span>
+														<span className="basket__product__quantity__button" id="product.id">+</span>
+													</td>
 													<td className="table__center__content">$ {product.price.toFixed(2)}</td>
 											</tr>
 										);
@@ -55,8 +62,8 @@ class Basket extends React.Component {
 						</tbody>
 						<tfoot>
 							<tr>
-								<td>Total price</td>
 								<td></td>
+								<td>Total price</td>
 								{localStorage.getItem("basketProducts") !== null 
 								? <td className="table__center__content">$ {this.totalPrice.toFixed(2)}</td>
 								: <td className="table__center__content">$ 0.00</td>}
