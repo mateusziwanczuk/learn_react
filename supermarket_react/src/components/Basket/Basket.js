@@ -8,7 +8,9 @@ class Basket extends React.Component {
 		redirect: false
 	};
 
-	totalPrice = localStorage.getItem("basketProducts") !== null ? 
+	basketProductsLS = localStorage.getItem('basketProducts')
+
+	totalPrice = this.basketProductsLS !== null ? 
 		this.state.basketProducts
 		.map(basketProduct => basketProduct.price)
 		.reduce((a,b) => a + b)
@@ -26,6 +28,13 @@ class Basket extends React.Component {
     }
 	}
 
+	deleteProduct = (product) => {
+			JSON.parse(this.basketProductsLS).filter(
+			id => id !== product.id
+		)
+		localStorage.setItem("basketProducts", JSON.stringify(this.deleteProduct))
+	}
+	
   render() { 
     return ( 
 			<div className="basket__container">
@@ -40,12 +49,15 @@ class Basket extends React.Component {
 							</tr>
 						</thead>
 						<tbody>
-							{localStorage.getItem("basketProducts") !== null ?
-									this.state.basketProducts.map((product, i) => {
+							{this.basketProductsLS !== null ?
+									this.state.basketProducts.map((product) => {
 										return (
 											<tr key={product.title}>
 													<td>
-														<span className="basket__delete__product">✘</span>
+														<span className="basket__delete__product" 
+															onClick={this.deleteProduct}>
+															✘
+														</span>
 														{product.title}
 													</td>
 													<td className="table__center__content">
