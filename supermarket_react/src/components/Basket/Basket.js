@@ -27,13 +27,6 @@ class Basket extends React.Component {
       return <Redirect to='/summary-order' />
     }
 	}
-
-	deleteProduct = (product) => {
-			JSON.parse(this.basketProductsLS).filter(
-			id => id !== product.id
-		)
-		localStorage.setItem("basketProducts", JSON.stringify(this.deleteProduct))
-	}
 	
   render() { 
     return ( 
@@ -55,7 +48,14 @@ class Basket extends React.Component {
 											<tr key={product.title}>
 													<td>
 														<span className="basket__delete__product" 
-															onClick={this.deleteProduct}>
+															onClick={() => {
+																const basketProducts = JSON.parse(this.basketProductsLS).filter(
+																	basketProduct => basketProduct.id !== product.id
+																)
+																localStorage.setItem("basketProducts", JSON.stringify(basketProducts))
+																this.setState({basketProducts})
+																console.log(basketProducts)
+															}}>
 															✘
 														</span>
 														{product.title}
