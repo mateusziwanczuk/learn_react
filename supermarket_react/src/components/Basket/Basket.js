@@ -52,9 +52,9 @@ class Basket extends React.Component {
 																const basketProducts = JSON.parse(this.basketProductsLS).filter(
 																	basketProduct => basketProduct.id !== product.id
 																)
-																localStorage.setItem("basketProducts", JSON.stringify(basketProducts))
+																localStorage.setItem('basketProducts', JSON.stringify(basketProducts))
 																this.setState({basketProducts})
-																console.log(basketProducts)
+																window.location.reload();
 															}}>
 															✘
 														</span>
@@ -76,7 +76,7 @@ class Basket extends React.Component {
 							<tr>
 								<td></td>
 								<td>Total price</td>
-								{localStorage.getItem("basketProducts") !== null 
+								{localStorage.getItem('basketProducts') !== null 
 								? <td className="table__center__content">$ {this.totalPrice.toFixed(2)}</td>
 								: <td className="table__center__content">$ 0.00</td>}
 							</tr>
