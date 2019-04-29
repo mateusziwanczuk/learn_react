@@ -27,7 +27,6 @@ class Basket extends React.Component {
   render() { 
     return ( 
 			<div className="basket__container">
-			{console.log(this.state.basketProducts)}
 				<h1>Basket</h1>
 				<div className="basket__container__table">
 					<table>
@@ -65,7 +64,7 @@ class Basket extends React.Component {
 											</tr>
 										);
 									}) 
-								: <br/>
+								: null
 							}
 						</tbody>
 						<tfoot>

@@ -25,11 +25,10 @@
     width: 60%;
 }
 
-
-.basket__container__table table {
-    margin: 0 auto;
-    width: 100%;
-}
+    .basket__container__table table {
+        margin: 0 auto;
+        width: 100%;
+    }
 
     .basket__container__table th {
         color: #6cb8b8;
