@@ -8,9 +8,11 @@ class Basket extends React.Component {
 		redirect: false
 	};
 
-	basketProductsLS = localStorage.getItem('basketProducts')
+	getProductsFromLS = () => {
+		return JSON.parse(localStorage.getItem('basketProducts'))
+	}
 
-	totalPrice = this.basketProductsLS !== null ? 
+	totalPrice = this.state.basketProducts !== null ? 
 		this.state.basketProducts
 		.map(basketProduct => basketProduct.price)
 		.reduce((a,b) => a + b)
@@ -42,19 +44,21 @@ class Basket extends React.Component {
 							</tr>
 						</thead>
 						<tbody>
-							{this.basketProductsLS !== null ?
+							{this.getProductsFromLS !== null ?
 									this.state.basketProducts.map((product) => {
 										return (
 											<tr key={product.title}>
 													<td>
 														<span className="basket__delete__product" 
 															onClick={() => {
-																const basketProducts = JSON.parse(this.basketProductsLS).filter(
+																let basketProducts = this.state.basketProducts.filter(
 																	basketProduct => basketProduct.id !== product.id
 																)
 																localStorage.setItem('basketProducts', JSON.stringify(basketProducts))
+																this.getProductsFromLS();
 																this.setState({basketProducts})
-																window.location.reload();
+																console.log(basketProducts)
+																console.log(this.state.basketProducts)
 															}}>
 															✘
 														</span>
@@ -69,14 +73,14 @@ class Basket extends React.Component {
 											</tr>
 										);
 									}) 
-									: <br/>
-								}
+								: <br/>
+							}
 						</tbody>
 						<tfoot>
 							<tr>
 								<td></td>
 								<td>Total price</td>
-								{localStorage.getItem('basketProducts') !== null 
+								{this.getProductsFromLS !== null 
 								? <td className="table__center__content">$ {this.totalPrice.toFixed(2)}</td>
 								: <td className="table__center__content">$ 0.00</td>}
 							</tr>

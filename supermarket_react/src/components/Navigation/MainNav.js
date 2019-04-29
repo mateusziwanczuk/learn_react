@@ -8,7 +8,8 @@ import { shop } from "react-icons-kit/ikons/shop";
 import { shoppingCart } from "react-icons-kit/fa/shoppingCart";
 import { clipboard } from 'react-icons-kit/icomoon/clipboard'
 import { bubbles3 } from 'react-icons-kit/icomoon/bubbles3';
-import { userTimes } from 'react-icons-kit/fa/userTimes';
+import { userPlus } from 'react-icons-kit/fa/userPlus';
+// import { userTimes } from 'react-icons-kit/fa/userTimes';
 
 import styled from "styled-components";
 
@@ -123,14 +124,22 @@ class MainNav extends React.Component {
 							<Text>Support</Text>
 						</NavLink>
 					</Nav>
-					<Nav id="/logout">
+					<Nav id="/sign-in">
+						<NavLink to="/sign-in"> 
+							<IconCnt>
+								<Icon icon={userPlus} />
+							</IconCnt>
+							<Text>Sign in</Text>
+						</NavLink>
+					</Nav>
+					{/* <Nav id="/logout">
 						<NavLink to="/logout"> 
 							<IconCnt>
 								<Icon icon={userTimes} />
 							</IconCnt>
 							<Text>Log out</Text>
 						</NavLink>
-					</Nav>
+					</Nav> */}
 				</SideNav>
 			</Navigation>
 		);

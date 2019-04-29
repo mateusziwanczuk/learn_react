@@ -6,6 +6,7 @@ import UserPanel from "../UserPanel/UserPanel"
 import Market from "../Market/Market"
 import Basket from "../Basket/Basket"
 import Summary from "../Summary/Summary"
+import SignIn from "../Auth/SignIn"
 
 const Content = styled.div`
 	background: url("/img/background.jpg");
@@ -23,6 +24,7 @@ const MainContent = () => {
 			<Route path="/market" component={ Market } />
 			<Route path="/basket" component={ Basket } />
 			<Route path="/summary-order" component={ Summary } />
+			<Route path="/sign-in" component={ SignIn } />
 		</Content>
 	);
 };
