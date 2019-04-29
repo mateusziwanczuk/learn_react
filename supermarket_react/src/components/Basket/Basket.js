@@ -27,6 +27,7 @@ class Basket extends React.Component {
   render() { 
     return ( 
 			<div className="basket__container">
+			{console.log(this.state.basketProducts)}
 				<h1>Basket</h1>
 				<div className="basket__container__table">
 					<table>
@@ -75,7 +76,7 @@ class Basket extends React.Component {
 								? <td className="table__center__content">$ {
 										this.state.basketProducts
 											.map(basketProduct => basketProduct.price)
-											.reduce((a,b) => a + b)
+											.reduce((a,b) => a + b, 0)
 											.toFixed(2)}
 									</td>
 								: <td className="table__center__content">$ 0.00</td>}
