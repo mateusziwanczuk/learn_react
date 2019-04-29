@@ -12,12 +12,6 @@ class Basket extends React.Component {
 		return JSON.parse(localStorage.getItem('basketProducts'))
 	}
 
-	totalPrice = this.state.basketProducts !== null ? 
-		this.state.basketProducts
-		.map(basketProduct => basketProduct.price)
-		.reduce((a,b) => a + b)
-		: null
-
 	setRedirect = () => {
 		this.setState({
 			redirect: true
@@ -54,11 +48,8 @@ class Basket extends React.Component {
 																let basketProducts = this.state.basketProducts.filter(
 																	basketProduct => basketProduct.id !== product.id
 																)
-																localStorage.setItem('basketProducts', JSON.stringify(basketProducts))
-																this.getProductsFromLS();
-																this.setState({basketProducts})
-																console.log(basketProducts)
-																console.log(this.state.basketProducts)
+																localStorage.setItem('basketProducts', JSON.stringify(basketProducts)) 
+																this.setState({basketProducts}) 
 															}}>
 															✘
 														</span>
@@ -81,7 +72,12 @@ class Basket extends React.Component {
 								<td></td>
 								<td>Total price</td>
 								{this.getProductsFromLS !== null 
-								? <td className="table__center__content">$ {this.totalPrice.toFixed(2)}</td>
+								? <td className="table__center__content">$ {
+										this.state.basketProducts
+											.map(basketProduct => basketProduct.price)
+											.reduce((a,b) => a + b)
+											.toFixed(2)}
+									</td>
 								: <td className="table__center__content">$ 0.00</td>}
 							</tr>
 						</tfoot>
