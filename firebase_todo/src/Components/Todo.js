@@ -7,10 +7,8 @@ class Todo extends React.Component {
     state = {
         todos: [],
         task: '',
-        edit: {
-            id: null,
-            task: ''
-        }
+        editId: null,
+        editTask: ''
 	};
 
 	componentDidMount() {
@@ -48,9 +46,7 @@ class Todo extends React.Component {
 
     handleEditChange = e => {
         this.setState({
-            edit: {
-                task: e.target.value
-            }
+            editTask: e.target.value
         })
     }
 
@@ -78,8 +74,8 @@ class Todo extends React.Component {
     }
 
     editTask = id => {
-        const editId = this.state.edit.id
-        const editTask = this.state.edit.task
+        const editId = this.state.editId
+        const editTask = this.state.editTask
         const todos = this.state.todos
         const databaseRef = firebase.database().ref('Todo/' + id)
 
@@ -90,17 +86,13 @@ class Todo extends React.Component {
                     this.getData()
                 })
             this.setState({ 
-                edit: { 
-                    id: null 
-                }
+                editId: null 
             })
         } else {
             const editedTodo = todos.find(todo => todo.id === id)
             this.setState({
-                edit: {
-                    id,
-                    task: editedTodo.task
-                }
+                editId: id,
+                editTask: editedTodo.task
             })
         }
     }
@@ -119,21 +111,22 @@ class Todo extends React.Component {
                 {this.state.todos.map(todo => (
                     <p key={todo.id}>
                         <span className="todo-emoji" role='img' aria-label="delete" onClick={() => this.removeTask(todo.id)}>❌</span>
-                        <span className="todo-emoji" role='img' aria-label="edit" onClick={() => this.editTask(todo.id)}>🛠️</span>                        
                         {todo.done === false ? 
-                        <span className="undone" onClick={() => this.isTaskDone(todo.id)}>UNDONE</span>
-                        :
-                        <span className="done" onClick={() => this.isTaskDone(todo.id)}>DONE</span>
+                            <span className="undone" onClick={() => this.isTaskDone(todo.id)}>UNDONE</span>
+                            :
+                            <span className="done" onClick={() => this.isTaskDone(todo.id)}>DONE</span>
                         }
-                        {this.state.edit.id === todo.id 
+                        {this.state.editId !== todo.id 
+                            ? <span className="todo-emoji" role='img' aria-label="edit" onClick={() => this.editTask(todo.id)}>🛠️</span>
+                            : <span className="todo-emoji" role='img' aria-label="save" onClick={() => this.editTask(todo.id)}>🆗</span>
+                        }
+                        {this.state.editId === todo.id 
                             ? 
                             <span>
-                                <input type="text" value={this.state.edit.task} onChange={this.handleEditChange}/>
-                                <button>OK</button>
+                                <input type="text" value={this.state.editTask} onChange={this.handleEditChange}/>     
                             </span>
                             : todo.task.toString()
                         }
-                        
                     </p>
                 ))}
                 <AddTask 

@@ -8,25 +8,22 @@ body {
 
 .todo-emoji {
   cursor: pointer;
-  margin: 0 .3rem;
+  margin: 0 .5rem;
 }
 
-.undone {
-  background: red;
+.undone, .done {
   border-radius: 5px;
   color: white;
   cursor: pointer;
   font-size: .6rem;
-  margin: 0 1rem 0 .5rem;
+}
+
+.undone {
+  background: red;
   padding: .3rem .5rem;
 }
 
 .done {
   background: green;
-  border-radius: 5px;
-  color: white;
-  cursor: pointer;
-  font-size: .6rem;
-  margin: 0 1rem 0 .5rem;
   padding: .3rem .9rem;
 }
