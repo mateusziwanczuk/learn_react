@@ -14,23 +14,6 @@ var config = {
 firebase.initializeApp(config);
 
 class App extends React.Component {
-  state = {
-		todos: []
-	};
-
-	componentDidMount() {
-    this.getData()
-  }
-
-  getData = () => {
-    firebase.database().ref('Todo').once('value')
-        .then(snapshot => {
-            this.setState({
-                todos: snapshot.val()
-            })
-        })
-  }
-  
   render() { 
     return (
       <Todo />
