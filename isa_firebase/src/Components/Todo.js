@@ -47,9 +47,9 @@ class Todo extends React.Component {
         let databaseRef = firebase.database().ref('Todo')
 
         if (databaseRef && this.state.task){
-            const newTaskId = databaseRef.push().key
+            const taskId = databaseRef.push().key
             databaseRef
-                .child("todo" + newTaskId)
+                .child('Todo' + taskId)
                 .set({
                     task,
                     done: false
@@ -60,11 +60,19 @@ class Todo extends React.Component {
         }
     }
 
+    removeTask = id => {
+        firebase.database().ref('Todo/' + id).remove()
+    }
+
     render() { 
         return (
             <>
                 {this.state.todos.map(todo => (
-                    <p key={Math.random()}>{todo.task}</p>
+                    <p key={Math.random()}>
+                        <span role='img' aria-label="delete" onClick={() => this.removeTask(todo.id)}>❌ </span> {todo.task}
+
+                    {console.log(todo)}
+                    </p>
                 ))}
                 <AddTask 
                     addTask = { this.addTask }
