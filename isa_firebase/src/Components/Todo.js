@@ -4,7 +4,8 @@ import AddTask from './AddTask'
 
 class Todo extends React.Component {
     state = {
-		todos: []
+        todos: [],
+        task: ''
 	};
 
 	componentDidMount() {
@@ -12,22 +13,64 @@ class Todo extends React.Component {
     }
 
     getData = () => {
-        firebase.database().ref('Todo').once('value')
+        const databaseRef = firebase.database().ref('Todo')
+        databaseRef.once('value')
             .then(snapshot => {
+                const todosSnapshot = snapshot.val() || {};
+                const todosArray = Object.keys(todosSnapshot).map(key => ({
+                    id: key,
+                    ...todosSnapshot[key]
+                }))
                 this.setState({
-                    todos: [snapshot.val()]
+                    todos: todosArray || []
                 })
             })
+        databaseRef.on("value", snapshot => {
+            const todosSnapshot = snapshot.val() || {};
+            const todosArray = Object.keys(todosSnapshot).map(key => ({
+                id: key,
+                ...todosSnapshot[key]
+            }))
+            this.setState({ todos: todosArray || [] });
+            });
+    }
+
+    handleInputChange = e => {
+        this.setState({
+            task: e.target.value
+        })
+    }
+
+    addTask = e => {
+        e.preventDefault()
+        let task = this.state.task
+        let databaseRef = firebase.database().ref('Todo')
+
+        if (databaseRef && this.state.task){
+            const newTaskId = databaseRef.push().key
+            databaseRef
+                .child("todo" + newTaskId)
+                .set({
+                    task,
+                    done: false
+                })
+                .then(() => {
+                    this.setState.task = ''
+                })
+        }
     }
 
     render() { 
         return (
             <>
-                {console.log(this.state.todos)}
                 {this.state.todos.map(todo => (
-                    <span key={new Date()}>{todo.task}</span>
+                    <p key={Math.random()}>{todo.task}</p>
                 ))}
-                <AddTask />
+                <AddTask 
+                    addTask = { this.addTask }
+                    value = {this.state.task }
+                    onInputChange = { this.handleInputChange }
+                />
             </>
         );
     }

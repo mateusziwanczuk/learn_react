@@ -5,8 +5,16 @@ class AddTask extends React.Component {
         return (
             <>
                 <div>
-                    <input type='text'></input>
-                    <button>Add task</button>
+                    <input 
+                        type = 'text' 
+                        placeholder = 'Add new task'
+                        value = { this.props.value }
+                        onChange = { this.props.onInputChange }
+                    />
+                    <button
+                        type = 'submit'
+                        onClick = { this.props.addTask }
+                    >Add task</button>
                 </div>
             </>
         );
