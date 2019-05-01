@@ -8,7 +8,6 @@ class AddTask extends React.Component {
                     <input 
                         type = 'text' 
                         placeholder = 'Add new task'
-                        value = { this.props.value }
                         onChange = { this.props.onInputChange }
                     />
                     <button

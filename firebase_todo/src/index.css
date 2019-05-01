@@ -6,22 +6,27 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.delete-task {
+.todo-emoji {
   cursor: pointer;
+  margin: 0 .3rem;
 }
 
 .undone {
   background: red;
+  border-radius: 5px;
   color: white;
   cursor: pointer;
+  font-size: .6rem;
   margin: 0 1rem 0 .5rem;
   padding: .3rem .5rem;
 }
 
 .done {
   background: green;
+  border-radius: 5px;
   color: white;
   cursor: pointer;
+  font-size: .6rem;
   margin: 0 1rem 0 .5rem;
-  padding: .3rem 1.3rem;
+  padding: .3rem .9rem;
 }

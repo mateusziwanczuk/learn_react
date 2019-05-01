@@ -78,7 +78,8 @@ class Todo extends React.Component {
             <>
                 {this.state.todos.map(todo => (
                     <p key={todo.id}>
-                        <span className="delete-task" role='img' aria-label="delete" onClick={() => this.removeTask(todo.id)}>❌</span>
+                        <span className="todo-emoji" role='img' aria-label="delete" onClick={() => this.removeTask(todo.id)}>❌</span>
+                        <span className="todo-emoji" role='img' aria-label="edit" onClick={() => this.removeTask(todo.id)}>🛠️</span>                        
                         {todo.done === false ? 
                         <span className="undone" onClick={() => this.isTaskDone(todo.id)}>UNDONE</span>
                         :
