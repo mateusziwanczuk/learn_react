@@ -1,6 +1,8 @@
 import React from 'react';
 import firebase from 'firebase'
 import Todo from './Components/Todo'
+import SignIn from './Components/SignIn'
+import SignUp from './Components/SignUp'
 import './index.css';
 
 var config = {
@@ -16,7 +18,13 @@ firebase.initializeApp(config);
 class App extends React.Component {
   render() { 
     return (
-      <Todo />
+      <>
+        <Todo />
+        <div className="sign__container">
+          <SignIn />
+          <SignUp />
+        </div>
+      </>
     );
   }
 }
