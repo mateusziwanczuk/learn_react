@@ -16,14 +16,24 @@ var config = {
 firebase.initializeApp(config);
 
 class App extends React.Component {
+  state = {
+    user: null
+}
+  componentDidMount(){
+    firebase.auth().onAuthStateChanged(user => {
+        this.setState({ user: user.email })
+    })
+  }
   render() { 
     return (
       <>
-        <Todo />
-        <div className="sign__container">
-          <SignIn />
-          <SignUp />
-        </div>
+        {this.state.user 
+          ? <Todo />
+          : <div className="sign__container">
+              <SignIn />
+              <SignUp />
+            </div>
+        }
       </>
     );
   }
