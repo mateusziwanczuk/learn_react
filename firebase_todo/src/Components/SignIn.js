@@ -52,7 +52,7 @@ class SignIn extends Component {
             .then(() => {
                 alert('Logged in');
             })
-            .catch(() => { alert('Something\'s wrong') })
+            .catch(error => { alert(error.message) })
     };
 
     render() {

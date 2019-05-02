@@ -50,7 +50,7 @@ class SignUp extends React.Component {
         event.preventDefault();
         firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
             .then(() => { alert('Registered') })
-            .catch(() => { alert('Something\'s wrong') })
+            .catch(error => { alert(error.message) })
     };
 
     render() {
