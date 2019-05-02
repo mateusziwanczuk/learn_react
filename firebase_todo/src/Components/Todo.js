@@ -1,5 +1,7 @@
 import React from 'react';
 import firebase from 'firebase'
+import Auth from '../Components/Auth';
+import SignOut from '../Components/SignOut'
 import AddTask from './AddTask'
 import TodoTask from './TodoTask'
 import '../index.css'
@@ -112,8 +114,10 @@ class Todo extends React.Component {
         const editedTask = this.state.editedTask
         return (
             <>
-                {todos.map(todo => (
-                    <TodoTask
+                <Auth>
+                    <SignOut />
+                    {todos.map(todo => (
+                        <TodoTask
                         todo = { todo }
                         key = { todo.id }
                         removeTask = { this.removeTask }
@@ -122,13 +126,14 @@ class Todo extends React.Component {
                         editTask = { this.editTask }
                         editedTask = { editedTask }
                         handleEditChange = { this.handleEditChange }
+                        />
+                        ))}
+                    <AddTask 
+                        addTask = { this.addTask }
+                        value = {this.state.task }
+                        onInputChange = { this.handleInputChange }
                     />
-                ))}
-                <AddTask 
-                    addTask = { this.addTask }
-                    value = {this.state.task }
-                    onInputChange = { this.handleInputChange }
-                />
+                </Auth>
             </>
         );
     }
