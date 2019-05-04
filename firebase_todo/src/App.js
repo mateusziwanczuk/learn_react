@@ -22,7 +22,7 @@ class App extends React.Component {
 
   componentDidMount(){
     firebase.auth().onAuthStateChanged(user => {
-        this.setState({ user: user.email })
+        this.setState({ user })
     })
   }
 
@@ -31,7 +31,7 @@ class App extends React.Component {
       <>
         {this.state.user 
           ? <span>
-              {this.state.user}
+              {this.state.user.email}
               <Todo />
             </span>
           : <div className="sign__container">
