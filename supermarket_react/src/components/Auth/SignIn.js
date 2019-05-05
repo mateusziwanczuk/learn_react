@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import firebase from "firebase";
 import PropTypes from 'prop-types';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
@@ -10,7 +11,15 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import withStyles from '@material-ui/core/styles/withStyles';
-import firebase from "firebase";
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+
+const cyanTheme = createMuiTheme({ 
+    palette: { 
+        primary: { 
+            main: '#66c7c7' 
+        }
+    }
+})
 
 const styles = theme => ({
     main: {
@@ -27,11 +36,11 @@ const styles = theme => ({
     },
     avatar: {
         margin: theme.spacing.unit,
-        backgroundColor: theme.palette.primary.main,
     },
     submit: {
         marginTop: theme.spacing.unit * 3,
-    },
+        color: 'white'
+    }
 });
 
 class SignIn extends Component {
@@ -39,6 +48,7 @@ class SignIn extends Component {
         email: '',
         password: '',
     };
+
     handleChange = (event) => {
         this.setState({
             [event.currentTarget.name]: event.target.value,
@@ -75,15 +85,17 @@ class SignIn extends Component {
                             <InputLabel htmlFor="password">Password</InputLabel>
                             <Input name="password" type="password" id="password" autoComplete="current-password" onChange={this.handleChange} />
                         </FormControl>
-                        <Button
-                            type="submit"
-                            fullWidth
-                            variant="contained"
-                            color="primary"
-                            className={classes.submit}
-                        >
-                            Sign in
-                        </Button>
+                        <MuiThemeProvider theme={cyanTheme}>
+                            <Button
+                                type="submit"
+                                fullWidth
+                                variant="contained"
+                                color="primary"
+                                className={classes.submit}
+                            >
+                                Sign in
+                            </Button>
+                        </MuiThemeProvider>
                     </form>
                 </Paper>
             </main>
