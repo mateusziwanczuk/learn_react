@@ -11,15 +11,6 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import withStyles from '@material-ui/core/styles/withStyles';
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-
-const cyanTheme = createMuiTheme({ 
-    palette: { 
-        primary: { 
-            main: '#66c7c7' 
-        }
-    }
-})
 
 const styles = theme => ({
     main: {
@@ -36,6 +27,7 @@ const styles = theme => ({
     },
     avatar: {
         margin: theme.spacing.unit,
+        backgroundColor: theme.palette.primary.main,
     },
     submit: {
         marginTop: theme.spacing.unit * 3,
@@ -85,17 +77,15 @@ class SignIn extends Component {
                             <InputLabel htmlFor="password">Password</InputLabel>
                             <Input name="password" type="password" id="password" autoComplete="current-password" onChange={this.handleChange} />
                         </FormControl>
-                        <MuiThemeProvider theme={cyanTheme}>
-                            <Button
-                                type="submit"
-                                fullWidth
-                                variant="contained"
-                                color="primary"
-                                className={classes.submit}
-                            >
-                                Sign in
-                            </Button>
-                        </MuiThemeProvider>
+                        <Button
+                            type="submit"
+                            fullWidth
+                            variant="contained"
+                            color="primary"
+                            className={classes.submit}
+                        >
+                            Sign in
+                        </Button>
                     </form>
                 </Paper>
             </main>

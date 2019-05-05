@@ -27,7 +27,7 @@ const styles = theme => ({
     },
     avatar: {
         margin: theme.spacing.unit,
-        backgroundColor: theme.palette.primary.main,
+        backgroundColor: theme.palette.secondary.main,
     },
     submit: {
         marginTop: theme.spacing.unit * 3,
@@ -79,7 +79,7 @@ class SignUp extends React.Component {
                             type="submit"
                             fullWidth
                             variant="contained"
-                            color="primary"
+                            color="secondary"
                             className={classes.submit}
                         >
                             Register
