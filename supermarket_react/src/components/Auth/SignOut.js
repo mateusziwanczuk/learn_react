@@ -1,11 +1,13 @@
 import React from 'react';
+import Button from '@material-ui/core/Button';
+import firebase from 'firebase';
 
-class SignOut extends React.Component {
-    render() { 
-        return (
-            <h1>Sign out</h1>
-        );
-    }
-}
- 
-export default SignOut;
+const SignOut = () => {
+    const signOut = () => {
+        firebase.auth().signOut();
+        window.location.reload();
+    };
+    return <Button color="secondary" onClick={signOut}>Sign out</Button>
+};
+
+export default SignOut;  

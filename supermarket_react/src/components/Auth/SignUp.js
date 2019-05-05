@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
@@ -10,7 +10,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import withStyles from '@material-ui/core/styles/withStyles';
-import firebase from "firebase";
+import firebase from 'firebase';
 
 const styles = theme => ({
     main: {
@@ -27,35 +27,35 @@ const styles = theme => ({
     },
     avatar: {
         margin: theme.spacing.unit,
-        backgroundColor: theme.palette.primary.main,
+        backgroundColor: theme.palette.secondary.main,
     },
     submit: {
         marginTop: theme.spacing.unit * 3,
     },
 });
 
-class SignIn extends Component {
+class SignUp extends React.Component {
     state = {
         email: '',
-        password: '',
+        password: ''
     };
+
     handleChange = (event) => {
         this.setState({
-            [event.currentTarget.name]: event.target.value,
+            [event.currentTarget.name]: event.target.value
         })
     };
 
     handleSubmit = (event) => {
         event.preventDefault();
-        firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
-            .then(() => {
-                alert('Logged in');
-            })
+        firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+            .then(() => { alert('Registered') })
             .catch(error => { alert(error.message) })
     };
 
     render() {
         const { classes } = this.props;
+
         return (
             <main className={classes.main}>
                 <CssBaseline />
@@ -64,25 +64,25 @@ class SignIn extends Component {
                         <LockOutlinedIcon />
                     </Avatar>
                     <Typography component="h1" variant="h5">
-                        Sign in
-                        </Typography>
+                        Sign up
+                    </Typography>
                     <form className={classes.form} onSubmit={this.handleSubmit}>
                         <FormControl margin="normal" required fullWidth>
                             <InputLabel htmlFor="email">Email</InputLabel>
-                            <Input id="email" name="email" autoComplete="email" autoFocus onChange={this.handleChange} />
+                            <Input id="email" name="email" autoComplete="email" autoFocus value={this.state.email} onChange={this.handleChange} />
                         </FormControl>
                         <FormControl margin="normal" required fullWidth>
                             <InputLabel htmlFor="password">Password</InputLabel>
-                            <Input name="password" type="password" id="password" autoComplete="current-password" onChange={this.handleChange} />
+                            <Input name="password" type="password" id="password" autoComplete="current-password" value={this.state.password} onChange={this.handleChange} />
                         </FormControl>
                         <Button
                             type="submit"
                             fullWidth
                             variant="contained"
-                            color="primary"
+                            color="secondary"
                             className={classes.submit}
                         >
-                            Sign in
+                            Register
                         </Button>
                     </form>
                 </Paper>
@@ -91,8 +91,8 @@ class SignIn extends Component {
     }
 }
 
-SignIn.propTypes = {
+SignUp.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(SignIn); 
+export default withStyles(styles)(SignUp); 
