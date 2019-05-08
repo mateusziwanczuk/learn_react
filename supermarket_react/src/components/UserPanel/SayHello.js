@@ -1,17 +1,49 @@
 import React from 'react';
+import firebase from 'firebase'
 import './User.css';
 
 class SayHello extends React.Component {
     state = {
-        name: "",
+        user: null,
     }
+
     componentDidMount(){
-        fetch('user.json')
-            .then(response => response.json())
-            .then(value => this.setState({name: value.name}))
+        firebase.auth().onAuthStateChanged(user =>
+            this.setState({
+                authUser: user,
+                authUserId: user.uid,
+                authUserEmail: user.email,
+                authUserRegistered: user.metadata.creationTime,
+                authIsChecked: true,
+            }),
+        )
+        const databaseRef = firebase.database().ref('users')
+        databaseRef.once('value')
+            .then(snapshot => {
+                const snapshotVal = snapshot.val() || {};
+                const findUser = Object.keys(snapshotVal)
+                    .map(key => ({
+                        id: key,
+                        ...snapshotVal[key]
+                    }))
+                    .filter(user => {
+                        return user.id === this.state.authUserId
+                    })
+                const user = findUser[0]
+                this.setState({ 
+                    user, 
+                    userFirstName: user.name.split(' ')[0] 
+                })
+            })
     }
+
     render (){
-        return <h1 className="user__container__header">Hello {this.state.name}!</h1>
+        return <h1 className="user__container__header">
+            Hello { this.state.user 
+                ? this.state.userFirstName 
+                : null 
+            }!
+        </h1>
     }      
 }
 
