@@ -83,9 +83,18 @@ class MainNav extends React.Component {
 	}
 
 	render() {
+		const signInNavLink = (icon, text) => {
+			return (
+				<NavLink to="/sign-in">
+					<IconCnt>
+						<Icon icon={icon} />
+					</IconCnt>
+					<Text>{text}</Text>
+				</NavLink>
+			)
+		}
 		return (
 			<Navigation>
-				{console.log(this.state.user)}
 				<SideNav
 					defaultSelectedPath={window.location.pathname}
 					theme={theme}
@@ -108,44 +117,69 @@ class MainNav extends React.Component {
 						</NavLink>
 					</Nav>
 					<Nav id="/user-panel">
-						<NavLink to="/user-panel">
-							<IconCnt>
-								<Icon icon={user} />
-							</IconCnt>
-							<Text>User Panel</Text>
-						</NavLink>
+						{this.state.user 
+							? 
+							<NavLink to="/user-panel">
+								<IconCnt>
+									<Icon icon={user} />
+								</IconCnt>
+								<Text>User Panel</Text>
+							</NavLink>
+							: 
+							signInNavLink(user, 'user panel')
+						}
 					</Nav>
 					<Nav id="/market">
-						<NavLink to="/market">
-							<IconCnt>
-								<Icon icon={shop} />
-							</IconCnt>
-							<Text>Market</Text>
-						</NavLink>
+						{this.state.user
+							?
+							<NavLink to="/market">
+								<IconCnt>
+									<Icon icon={shop} />
+								</IconCnt>
+								<Text>Market</Text>
+							</NavLink>
+							:
+							signInNavLink(shop, 'market')
+						}
 					</Nav>
 					<Nav id="/basket">
-						<NavLink to="/basket">
-							<IconCnt>
-								<Icon icon={shoppingCart} />
-							</IconCnt>
-							<Text>Basket</Text>
-						</NavLink>
+						{this.state.user
+							?
+							<NavLink to="/basket">
+								<IconCnt>
+									<Icon icon={shoppingCart} />
+								</IconCnt>
+								<Text>Basket</Text>
+							</NavLink>
+							:
+							signInNavLink(shoppingCart, 'basket')
+						}
 					</Nav>
 					<Nav id="/summary-order">
-						<NavLink to="/summary-order">
-							<IconCnt>
-								<Icon icon={clipboard} />
-							</IconCnt>
-							<Text>Summary the order</Text>
-						</NavLink>
+						{this.state.user
+							?
+							<NavLink to="/summary-order">
+								<IconCnt>
+									<Icon icon={clipboard} />
+								</IconCnt>
+								<Text>Summary the order</Text>
+							</NavLink>
+							:
+							signInNavLink(clipboard, 'summary the order')
+						}
 					</Nav>
 					<Nav id="/support">
-						<NavLink to="/support">
-							<IconCnt>
-								<Icon icon={bubbles3} />
-							</IconCnt>
-							<Text>Support</Text>
-						</NavLink>
+						{this.state.user
+							?
+							<NavLink to="/support">
+								<IconCnt>
+									<Icon icon={bubbles3} />
+								</IconCnt>
+								<Text>Support</Text>
+							</NavLink>
+							:
+							signInNavLink(bubbles3, 'support')
+						}
 					</Nav>
 					{!this.state.user ?
 						(
