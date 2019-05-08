@@ -36,7 +36,7 @@ class DeleteUser extends React.Component {
 
     signOut = () => {
         firebase.auth().signOut()
-		return <Redirect to='/' />
+		    .then(this.setRedirect)
     }
 
     deleteAccount = () => {
