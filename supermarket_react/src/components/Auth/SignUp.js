@@ -37,7 +37,11 @@ const styles = theme => ({
 class SignUp extends React.Component {
     state = {
         email: '',
-        password: ''
+        password: '',
+        name: '',
+        street: '',
+        city: '',
+        phone: ''
     };
 
     handleChange = (event) => {
@@ -68,12 +72,66 @@ class SignUp extends React.Component {
                     </Typography>
                     <form className={classes.form} onSubmit={this.handleSubmit}>
                         <FormControl margin="normal" required fullWidth>
-                            <InputLabel htmlFor="email">Email</InputLabel>
-                            <Input id="email__sign-up" name="email" autoComplete="email" autoFocus value={this.state.email} onChange={this.handleChange} />
+                            <InputLabel htmlFor="text">
+                                Name
+                            </InputLabel>
+                            <Input 
+                                id="name" 
+                                name="name"
+                                value={this.state.name} 
+                                onChange={this.handleChange} 
+                            />
                         </FormControl>
                         <FormControl margin="normal" required fullWidth>
-                            <InputLabel htmlFor="password">Password</InputLabel>
-                            <Input name="password" type="password" id="password__sign-up" autoComplete="current-password" value={this.state.password} onChange={this.handleChange} />
+                            <InputLabel htmlFor="text">
+                                Address
+                            </InputLabel>
+                            <Input 
+                                id="street" 
+                                name="street"
+                                value={this.state.address} 
+                                onChange={this.handleChange} 
+                            />
+                        </FormControl>
+                        <FormControl margin="normal" required fullWidth>
+                            <InputLabel htmlFor="text">
+                                City
+                            </InputLabel>
+                            <Input 
+                                id="city" 
+                                name="city" 
+                                value={this.state.city} 
+                                onChange={this.handleChange} 
+                            />
+                        </FormControl>
+                        <FormControl margin="normal" required fullWidth>
+                            <InputLabel htmlFor="text">
+                                Phone number
+                            </InputLabel>
+                            <Input 
+                                id="phone" 
+                                name="phone" 
+                                value={this.state.phone} 
+                                onChange={this.handleChange} 
+                            />
+                        </FormControl>
+                        <FormControl margin="normal" required fullWidth>
+                            <InputLabel htmlFor="email">
+                                Email
+                            </InputLabel>
+                            <Input 
+                                id="email__sign-up" 
+                                name="email" 
+                                value={this.state.email} 
+                                onChange={this.handleChange} 
+                            />
+                        </FormControl>
+                        <FormControl margin="normal" required fullWidth>
+                            <InputLabel htmlFor="password">
+                                Password
+                            </InputLabel>
+                            <Input 
+                                name="password" type="password" id="password__sign-up" autoComplete="current-password" value={this.state.password} onChange={this.handleChange} />
                         </FormControl>
                         <Button
                             type="submit"
