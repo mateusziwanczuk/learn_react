@@ -31,10 +31,12 @@ class SayHello extends React.Component {
                     return user.id === this.state.authUserId
                 })
                 const user = findUser[0]
-                this.setState({ 
-                    user, 
-                    userFirstName: user.name.split(' ')[0] 
-                })
+                if (user) {
+                    this.setState({ 
+                        user, 
+                        userFirstName: user.name.split(' ')[0] 
+                    })
+                }
             })
         })
         this.setState({ ref })
