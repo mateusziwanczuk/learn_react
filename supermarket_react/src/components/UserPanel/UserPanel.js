@@ -11,11 +11,7 @@ class UserPanel extends React.Component {
     state = {
         name: ""
     }
-    componentDidMount(){
-        fetch('user.json')
-            .then(response => response.json())
-            .then(value => this.setState({name: value.name}))
-    }
+    
     render (){
         return(
             <div className="user__container">

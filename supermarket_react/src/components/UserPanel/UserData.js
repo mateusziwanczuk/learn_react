@@ -1,27 +1,33 @@
 import React from 'react';
+import firebase from 'firebase'
 
-class Nickname extends React.Component {
+class UserData extends React.Component {
     state = {
-        registered: "",
-        nickname: "",
-        email: "",
-        address1: "",
-        address2: "",
-        phone: "",
+        authUser: null,
+        authUserRegistered: '',
+        authUserEmail: '',
+        authIsChecked: false,
         showInput: false,
     }
     componentDidMount(){
-        fetch('user.json')
-            .then(response => response.json())
-            .then(value => this.setState({
-                nickname: value.nickname, 
-                registered: value.registered, 
-                email: value.email, 
-                address1: value.address.street, 
-                address2: `${value.address.zipcode} ${value.address.city}`, 
-                phone: value.phone 
-            }))
+        firebase.auth().onAuthStateChanged(user =>
+            this.setState({
+                authUser: user,
+                authUserId: user.uid,
+                authUserEmail: user.email,
+                authUserRegistered: user.metadata.creationTime,
+                authIsChecked: true,
+            })
+        )
+        const databaseRef = firebase.database().ref('users')
+        databaseRef.once('value')
+            .then(snapshot => {
+                const snapshotVal = snapshot.val() || {};
+                const user = Object.keys(snapshotVal)
+                console.log(user)
+            })
     }
+
     editUserData = () => {
         const doInputsShow = this.state.showInput;
         this.setState( { 
@@ -46,10 +52,11 @@ class Nickname extends React.Component {
     render (){
         return(
             <div className="user__container__left__top__userdata">
-                <span style={{fontSize: "1.2rem"}}>Registered: {this.state.registered}</span>
+                {console.log(this.state.authUser)}
+                <span style={{fontSize: "1.2rem"}}>Registered: {this.state.authUserRegistered}</span>
                 <h2>
                     <span role="img" aria-label="user">👤 </span> 
-                    Login: {this.state.nickname}
+                    Name: {this.state.nickname}
                 </h2> 
                 <h2>
                     <span role="img" aria-label="phone">📞 </span> 
@@ -63,9 +70,9 @@ class Nickname extends React.Component {
                             <h4>phone: </h4>
                         </div>
                         <div>
-                            <h4>{this.state.email}</h4>
+                            <h4>{this.state.authUserEmail}</h4>
                                 <div className="change__data__container unvisible">
-                                    <input type="email" value={this.state.email} onChange={this.editEmail}></input>
+                                    <input type="email" value={this.state.authUserEmail} onChange={this.editEmail}></input>
                                 </div>
                             <h4>{this.state.address1}</h4>
                             <h4>{this.state.address2}</h4>
@@ -84,4 +91,4 @@ class Nickname extends React.Component {
     }
 }
 
-export default Nickname;
+export default UserData;
