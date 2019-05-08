@@ -1,5 +1,6 @@
 import React from 'react';
 import firebase from 'firebase'
+import DeleteUser from './DeleteUser'
 
 class UserData extends React.Component {
     state = {
@@ -133,13 +134,12 @@ class UserData extends React.Component {
                                         value={ this.state.user ? this.state.user.city : '' } 
                                         onChange={this.editAddress2}>
                                     </input>
-                                </div>
-                                <div className="change__data__container unvisible">
                                     <input 
                                         type="text" 
                                         value={ this.state.user ? this.state.user.phone : '' } 
                                         onChange={this.editPhoneNum}>
                                     </input>
+                                    <DeleteUser />
                                 </div>
                         </div>
                     </div>  
