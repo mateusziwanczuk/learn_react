@@ -32,10 +32,7 @@ class UserData extends React.Component {
                         return user.id === this.state.authUserId
                     })
                 const user = findUser[0]
-                console.log(user)
-                this.setState({ 
-                    user
-                })
+                this.setState({ user })
             })
     }
 
@@ -55,7 +52,7 @@ class UserData extends React.Component {
 
         }
     }
-    editEmail = (e) => { this.setState({ email: e.target.value }) }
+
     editAddress1 = (e) => { this.setState({ address1: e.target.value }) }
     editAddress2 = (e) => { this.setState({ address2: e.target.value }) }
     editPhone = (e) => { this.setState({ phone: e.target.value }) }
@@ -63,7 +60,6 @@ class UserData extends React.Component {
     render (){
         return(
             <div className="user__container__left__top__userdata">
-                {console.log(this.state.authUserId)}
                 <span style={{fontSize: "1.2rem"}}>Registered: {this.state.authUserRegistered}</span>
                 <h2>
                     <span role="img" aria-label="user">👤 </span> 
@@ -82,18 +78,15 @@ class UserData extends React.Component {
                         </div>
                         <div>
                             <h4>{this.state.authUserEmail}</h4>
+                            <h4>{ this.state.user ? this.state.user.street : null }</h4>
+                            <h4>{ this.state.user ? this.state.user.city : null }</h4>
                                 <div className="change__data__container unvisible">
-                                    <input type="email" value={this.state.authUserEmail} onChange={this.editEmail}></input>
-                                </div>
-                            <h4>{this.state.address1}</h4>
-                            <h4>{this.state.address2}</h4>
-                                <div className="change__data__container unvisible">
-                                    <input type="text" value={this.state.address1} onChange={this.editAddress1}></input>
-                                    <input type="text" value={this.state.address2} onChange={this.editAddress2}></input>
+                                    <input type="text" value={''} onChange={this.editAddress1}></input>
+                                    <input type="text" value={''} onChange={this.editAddress2}></input>
                                 </div>
                             <h4>{this.state.phone}</h4>
                                 <div className="change__data__container unvisible">
-                                    <input type="text" value={this.state.phone} onChange={this.editPhone}></input>
+                                    <input type="text" value={''} onChange={this.editPhone}></input>
                                 </div>
                         </div>
                     </div>  
