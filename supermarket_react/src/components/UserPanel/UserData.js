@@ -53,9 +53,50 @@ class UserData extends React.Component {
         }
     }
 
-    editAddress1 = (e) => { this.setState({ address1: e.target.value }) }
-    editAddress2 = (e) => { this.setState({ address2: e.target.value }) }
-    editPhone = (e) => { this.setState({ phone: e.target.value }) }
+    editAddress1 = (e) => { 
+        if (this.state.user) { 
+            this.setState({ 
+                user: {
+                    ...this.state.user,
+                    street: e.target.value 
+                }
+            }, () => {
+            firebase.database()
+                .ref(`users/${this.state.authUserId}`)
+                .update({ street: this.state.user.street })
+            }) 
+        }
+    }
+
+    editAddress2 = (e) => { 
+        if (this.state.user) { 
+            this.setState({ 
+                user: {
+                    ...this.state.user,
+                    city: e.target.value 
+                }
+            }, () => {
+            firebase.database()
+                .ref(`users/${this.state.authUserId}`)
+                .update({ city: this.state.user.city })
+            }) 
+        }
+    }
+
+    editPhoneNum = (e) => {
+        if (this.state.user) { 
+            this.setState({ 
+                user: {
+                    ...this.state.user,
+                    phone: e.target.value 
+                }
+            }, () => {
+                firebase.database()
+                .ref(`users/${this.state.authUserId}`)
+                .update({ phone: this.state.user.phone })
+            })    
+        }
+    }
 
     render (){
         return(
@@ -80,13 +121,25 @@ class UserData extends React.Component {
                             <h4>{this.state.authUserEmail}</h4>
                             <h4>{ this.state.user ? this.state.user.street : null }</h4>
                             <h4>{ this.state.user ? this.state.user.city : null }</h4>
+                            <h4>{ this.state.user ? this.state.user.phone : null }</h4>
                                 <div className="change__data__container unvisible">
-                                    <input type="text" value={''} onChange={this.editAddress1}></input>
-                                    <input type="text" value={''} onChange={this.editAddress2}></input>
+                                    <input 
+                                        type="text" 
+                                        value={ this.state.user ? this.state.user.street : '' } 
+                                        onChange={this.editAddress1}>
+                                    </input>
+                                    <input 
+                                        type="text" 
+                                        value={ this.state.user ? this.state.user.city : '' } 
+                                        onChange={this.editAddress2}>
+                                    </input>
                                 </div>
-                            <h4>{this.state.phone}</h4>
                                 <div className="change__data__container unvisible">
-                                    <input type="text" value={''} onChange={this.editPhone}></input>
+                                    <input 
+                                        type="text" 
+                                        value={ this.state.user ? this.state.user.phone : '' } 
+                                        onChange={this.editPhoneNum}>
+                                    </input>
                                 </div>
                         </div>
                     </div>  
