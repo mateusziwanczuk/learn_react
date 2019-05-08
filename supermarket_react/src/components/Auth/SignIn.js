@@ -32,6 +32,12 @@ const styles = theme => ({
     submit: {
         marginTop: theme.spacing.unit * 3,
         color: 'white'
+    },
+    remind: {
+        marginTop: theme.spacing.unit * 2,
+        textAlign: 'center',
+        color: 'rgb(130, 181, 201)',
+        cursor: 'pointer'
     }
 });
 
@@ -56,6 +62,17 @@ class SignIn extends Component {
             .catch(error => { alert(error.message) })
     };
 
+    resetPassword = () => {
+        var auth = firebase.auth();
+        var emailAddress = this.state.email;
+
+        this.state.email 
+            ? auth.sendPasswordResetEmail(emailAddress)
+                .then(() => alert('Link to password reset sent. Check your e-mail.'))
+                .catch(error => alert(error))
+            : alert('Wrong email address.')
+    }
+
     render() {
         const { classes } = this.props;
         return (
@@ -67,15 +84,24 @@ class SignIn extends Component {
                     </Avatar>
                     <Typography component="h1" variant="h5">
                         Sign in
-                        </Typography>
+                    </Typography>
                     <form className={classes.form} onSubmit={this.handleSubmit}>
                         <FormControl margin="normal" required fullWidth>
                             <InputLabel htmlFor="email">Email</InputLabel>
-                            <Input id="email" name="email" autoComplete="email" autoFocus onChange={this.handleChange} />
+                            <Input 
+                                id="email" 
+                                name="email"
+                                onChange={this.handleChange} 
+                            />
                         </FormControl>
                         <FormControl margin="normal" required fullWidth>
                             <InputLabel htmlFor="password">Password</InputLabel>
-                            <Input name="password" type="password" id="password" autoComplete="current-password" onChange={this.handleChange} />
+                            <Input 
+                                name="password" 
+                                type="password" 
+                                id="password"
+                                onChange={this.handleChange} 
+                            />
                         </FormControl>
                         <Button
                             type="submit"
@@ -86,6 +112,12 @@ class SignIn extends Component {
                         >
                             Sign in
                         </Button>
+                        <Typography 
+                            className={classes.remind}
+                            onClick={this.resetPassword}
+                        >
+                            Nie pamiętam hasła.
+                        </Typography>
                     </form>
                 </Paper>
             </main>
