@@ -23,8 +23,19 @@ class UserData extends React.Component {
         databaseRef.once('value')
             .then(snapshot => {
                 const snapshotVal = snapshot.val() || {};
-                const user = Object.keys(snapshotVal)
+                const findUser = Object.keys(snapshotVal)
+                    .map(key => ({
+                        id: key,
+                        ...snapshotVal[key]
+                    }))
+                    .filter(user => {
+                        return user.id === this.state.authUserId
+                    })
+                const user = findUser[0]
                 console.log(user)
+                this.setState({ 
+                    user
+                })
             })
     }
 
@@ -52,7 +63,7 @@ class UserData extends React.Component {
     render (){
         return(
             <div className="user__container__left__top__userdata">
-                {console.log(this.state.authUser)}
+                {console.log(this.state.authUserId)}
                 <span style={{fontSize: "1.2rem"}}>Registered: {this.state.authUserRegistered}</span>
                 <h2>
                     <span role="img" aria-label="user">👤 </span> 
