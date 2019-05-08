@@ -11,6 +11,7 @@ import { clipboard } from 'react-icons-kit/icomoon/clipboard'
 import { bubbles3 } from 'react-icons-kit/icomoon/bubbles3';
 import { userPlus } from 'react-icons-kit/fa/userPlus';
 import { userTimes } from 'react-icons-kit/fa/userTimes';
+import  { Redirect } from 'react-router-dom'
 
 import styled from "styled-components";
 
@@ -78,6 +79,7 @@ class MainNav extends React.Component {
 
 	signOut = () => {
 		firebase.auth().signOut();
+		return <Redirect to='/' />
 	}
 
 	render() {
@@ -156,7 +158,7 @@ class MainNav extends React.Component {
 								</NavLink>
 							</Nav>
 						) : (
-							<NavLink to="/home" onClick={this.signOut}>
+							<NavLink to="/" onClick={this.signOut}>
 							<IconCnt>
 									<Icon icon={userTimes} />
 							</IconCnt>
