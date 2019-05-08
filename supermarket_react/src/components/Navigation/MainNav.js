@@ -1,4 +1,5 @@
 import React from "react";
+import firebase from "firebase"
 import { Link } from "react-router-dom";
 import { SideNav, Nav as BaseNav } from "react-sidenav";
 import { Icon as BaseIcon } from "react-icons-kit";
@@ -9,7 +10,7 @@ import { shoppingCart } from "react-icons-kit/fa/shoppingCart";
 import { clipboard } from 'react-icons-kit/icomoon/clipboard'
 import { bubbles3 } from 'react-icons-kit/icomoon/bubbles3';
 import { userPlus } from 'react-icons-kit/fa/userPlus';
-// import { userTimes } from 'react-icons-kit/fa/userTimes';
+import { userTimes } from 'react-icons-kit/fa/userTimes';
 
 import styled from "styled-components";
 
@@ -54,15 +55,35 @@ const NavLink = styled(Link)`
 const Icon = props => <BaseIcon size={36} icon={props.icon} />;
 
 class MainNav extends React.Component {
-	state = { selectedPath: "" };
+	state = { 
+		user: null,
+		isChecked: false,
+		selectedPath: '',
+	};
 
-	onItemSelection = arg => {
+	onNavItemSelect = () => {
 		this.setState({ selectedPath: window.location.pathname });
 	};
+
+	componentDidMount(){
+		this.setState({ 
+			selectedPath: window.location.pathname 
+		});
+		firebase.auth().onAuthStateChanged(user =>
+            this.setState({
+                user,
+                isChecked: true
+            }))
+	}
+
+	signOut = () => {
+		firebase.auth().signOut();
+	}
 
 	render() {
 		return (
 			<Navigation>
+				{console.log(this.state.user)}
 				<SideNav
 					defaultSelectedPath={window.location.pathname}
 					theme={theme}
@@ -124,22 +145,25 @@ class MainNav extends React.Component {
 							<Text>Support</Text>
 						</NavLink>
 					</Nav>
-					<Nav id="/sign-in">
-						<NavLink to="/sign-in"> 
+					{!this.state.user ?
+						(
+							<Nav id="/sign-in">
+								<NavLink to="/sign-in"> 
+									<IconCnt>
+										<Icon icon={userPlus} />
+									</IconCnt>
+									<Text>Sign in</Text>
+								</NavLink>
+							</Nav>
+						) : (
+							<NavLink to="/home" onClick={this.signOut}>
 							<IconCnt>
-								<Icon icon={userPlus} />
+									<Icon icon={userTimes} />
 							</IconCnt>
-							<Text>Sign in</Text>
+							<Text>Sign out</Text>
 						</NavLink>
-					</Nav>
-					{/* <Nav id="/logout">
-						<NavLink to="/logout"> 
-							<IconCnt>
-								<Icon icon={userTimes} />
-							</IconCnt>
-							<Text>Log out</Text>
-						</NavLink>
-					</Nav> */}
+					)
+				}
 				</SideNav>
 			</Navigation>
 		);

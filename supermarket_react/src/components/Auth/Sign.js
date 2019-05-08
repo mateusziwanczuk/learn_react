@@ -1,7 +1,6 @@
 import React from 'react';
 import SignIn from './SignIn'
 import SignUp from './SignUp'
-import SignOut from './SignOut'
 import './sign.css'
 
 class Sign extends React.Component {
@@ -12,8 +11,6 @@ class Sign extends React.Component {
                     <SignIn />
                     <SignUp />
                 </div>
-                <br/>
-                <SignOut />
             </div>
         );
     }
