@@ -8,10 +8,6 @@ import MarketList from './MarketsList'
 import './User.css';
 
 class UserPanel extends React.Component {
-    state = {
-        name: ""
-    }
-    
     render (){
         return(
             <div className="user__container">
