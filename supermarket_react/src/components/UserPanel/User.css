@@ -72,6 +72,10 @@ h2 {
                     width: 80%;
                 }
 
+                .edit__buttons__container {
+                    display: flex;
+                }
+
                 .edit__button {
                     background: #0cadad69;
                     border-radius: 5px;
@@ -87,8 +91,8 @@ h2 {
                     background: #0cadad;
                 }
 
-                .delete__button span {
-                    background: #ff000069;
+                .save__button span, .delete__button span {
+                    background: #0cadad69;
                     border-radius: 5px;
                     color: white;
                     cursor: pointer;
@@ -96,6 +100,8 @@ h2 {
                     padding: 0.3rem 1.2rem;
                     text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.384);
                     vertical-align: middle;
+                    } 
+                    .delete__button span { background: #ff000069 
                 }
 
                 .unvisible {

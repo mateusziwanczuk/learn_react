@@ -64,7 +64,7 @@ class DeleteUser extends React.Component {
                     <DialogTitle id="alert-dialog-title">{"Are you sure?"}</DialogTitle>
                     <DialogContent>
                         <DialogContentText id="alert-dialog-description">
-                            This action is irreversible.. Do you really want to delete your account?
+                            This action is irreversible. Do you really want to delete your account?
                         </DialogContentText>
                     </DialogContent>
                     <DialogActions>

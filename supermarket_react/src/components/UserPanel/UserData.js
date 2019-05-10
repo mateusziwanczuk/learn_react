@@ -111,10 +111,6 @@ class UserData extends React.Component {
             <div className="user__container__left__top__userdata">
                 <span style={{fontSize: "1.2rem"}}>Registered: {this.state.authUserRegistered}</span>
                 <h2>
-                    <span role="img" aria-label="user">👤 </span> 
-                    Name: {this.state.nickname}
-                </h2> 
-                <h2>
                     <span role="img" aria-label="phone">📞 </span> 
                     Contact <span className="edit__button" onClick={this.editUserData}>Edit</span>
                 </h2>
@@ -146,7 +142,12 @@ class UserData extends React.Component {
                                         value={ this.state.user ? this.state.user.phone : '' } 
                                         onChange={this.editPhoneNum}>
                                     </input>
-                                    <DeleteUser />
+                                    <div className="edit__buttons__container">
+                                        <div className="save__button">
+                                            <span onClick={this.editUserData}>Save</span>
+                                        </div>
+                                        <DeleteUser />
+                                    </div>
                                 </div>
                         </div>
                     </div>  

@@ -129,7 +129,7 @@ class SignIn extends Component {
                             className={classes.remind}
                             onClick={this.resetPassword}
                         >
-                            Nie pamiętam hasła.
+                            I don't remember my password.
                         </Typography>
                     </form>
                 </Paper>
