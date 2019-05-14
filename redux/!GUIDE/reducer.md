@@ -1,3 +1,5 @@
+App => /src => /reducers
+
 Funkcja 'reducer' pełni rolę obiektu 'store'. Jako, że jest to funkcja, można ją użyć jako callback, który 'store' uruchomi w momencie, gdy zgłosimy akcję. Funkcja przyjmuje dwa parametry: state i action. 
 
 1. Wywołanie akcji ->
