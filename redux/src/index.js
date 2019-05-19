@@ -12,4 +12,7 @@ ReactDOM.render((
     </ReduxProvider>
 ), document.getElementById('root'));
 
+    // Renderowanie: Aby Redux spełniał swoje funkcje, należy owinąć dany komponent 
+    // Providerem dostarczanym przez moduł react-redux. Jako parametr przekazujemy mu utworzony wcześniej obiekt store.
+
 serviceWorker.unregister();
